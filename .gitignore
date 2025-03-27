@@ -1,0 +1,71 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+
+# Optional npm cache directory
+.npm
+
+# Build output
+.next/
+out/
+
+# Environment variables
+.env*
+!.env.example
+
+# Local .vscode settings
+.vscode/
+
+# Testing
+coverage/
+
+# Production
+dist/
+
+# Mac system files
+Icon?
+
+# Debugging
+*.log
+
+# IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Dependency directories
+.pnp/
+.pnp.js
+
+# Optional
+*.local
+
+# Lint cache
+.eslintcache
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Static export
+export/
+
+# Custom build folder if configured
+build/
+
+# vercel
+.vercel/
+
+# NextAuth.js debug
+.next-auth/
+
+# Storybook
+storybook-static/
