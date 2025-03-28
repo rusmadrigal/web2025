@@ -71,21 +71,21 @@ export const introduce = {
     <p>
       {" "}
       <span className="font-medium text-black dark:text-white/90">
-        Senior Technical SEO & Data Enthusiast
+        Consultor SEO en Costa Rica con más de 15 años de experiencia.
       </span>{" "}
-      Passionate about SEO since 2009. Specialist in Technical SEO with
-      experience in Web Development and Digital Analytics.
+      Me especializo en optimización de sitios web para motores de búsqueda como
+      Google, Bing y Agentes AI tales como: ChatGPT & DeepSeek.
     </p>
   ),
   jobs: [
     {
       id: 1,
-      title: "Available for work",
+      title: "Disponible",
       icon: <BiCheckDouble size={25} className="text-theme mr-1" />,
     },
     {
       id: 2,
-      title: "English & Spanish",
+      title: "Inglés & Español",
       icon: <BiCheckDouble size={25} className="text-theme mr-1" />,
     },
   ],
@@ -464,7 +464,7 @@ export const portfolio = {
       type: "seo",
       title: "Arauze.com - SEO experiment project in the Italian market",
       slug: "arauze-website-experiment",
-      
+
       projectHeading: {
         icon: <GrTasks className="text-theme" />,
         title: "Project Details",
