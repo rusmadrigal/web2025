@@ -61,7 +61,7 @@ import { IoHomeOutline } from "react-icons/io5";
 export const introduce = {
   iconBox: {
     Icon: <IoHomeOutline className="text-theme" size={14} />,
-    title: "SEO Costa Rica",
+    title: "Inicio",
   },
   heading: {
     heading1: "Consultor SEO",
