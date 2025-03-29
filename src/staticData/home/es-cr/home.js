@@ -290,8 +290,8 @@ export const services = {
   servicesHeading: {
     icon: <FaBriefcase className="text-theme" />,
     title: "SERVICES",
-    heading: "My",
-    coloredHeading: "Knowledge",
+    heading: "Servicios",
+    coloredHeading: "SEO",
     description:
       "Here’s a detailed summary of my expertise, highlighting my skills in SEO, Analytics, and Coding. These areas reflect a blend of technical proficiency and strategic insight, making me well-suited to drive impactful digital growth and performance.",
   },
