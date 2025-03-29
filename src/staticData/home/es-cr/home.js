@@ -293,7 +293,7 @@ export const services = {
     heading: "Servicios",
     coloredHeading: "SEO",
     description:
-      "Here’s a detailed summary of my expertise, highlighting my skills in SEO, Analytics, and Coding. These areas reflect a blend of technical proficiency and strategic insight, making me well-suited to drive impactful digital growth and performance.",
+    "Dentro del Posicionamiento web en motores de búsqueda (SEO) hay diferentes servicios, los cuales optimizan un área puntual del un proyecto. Estos servicios pueden ser utilizados de forma independiente o en conjunto, dependiendo de las necesidades del cliente. A continuación, se presentan los servicios que ofrezco:",
   },
   servicesData: [
     {
