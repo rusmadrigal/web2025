@@ -19,19 +19,24 @@ const AboutMe = () => {
       <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl about-section lg:p-10 2xl:p-13">
         <div className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
           <CiUser className="text-theme" size={14} />
-          ABOUT ME
+          ACERCA
         </div>
         <div className="mt-7 md:mt-10 section-title">
           <h2 className="title text-[32px] md:text-4xl lg:text-5xl font-extralight text-black dark:text-white leading-1.27">
-            About <span className="font-semibold text-theme">Me</span>
+            Acerca de <span className="font-semibold text-theme">Rus</span>
           </h2>
           <p className="max-w-2xl mt-4 md:mt-6 subtitle">
-            Hi, my name is{" "}
             <span className="text-black dark:text-white">
-              {userDetailsSidebar?.userName}
+              {userDetailsSidebar?.userIntro}{" "}
             </span>{" "}
-            Since 2009, I’ve worked in various areas of SEO, including analytics, on-page optimization, and coding. For the past six years, I’ve primarily focused on the technical side of SEO, as it’s the area I’m most passionate about. {" "}
-            <span className="text-black dark:text-white"> Additionally</span>, I am a ReactJS Front-End Developer.
+            En este sitio web podrás encontrar información relacionada con los
+            servicios que ofrezco, así como conocer un poco más de mi
+            trayectoria laboral y tecnologías con las que principalmente he
+            trabajado.{" "}
+            <span className="text-black dark:text-white">
+              {" "}
+              Contáctame si tienes alguna duda adicional.
+            </span>
           </p>
         </div>
         <div className="mt-6 section-content">

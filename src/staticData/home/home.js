@@ -221,6 +221,7 @@ export const userDetailsSidebar = {
   userImage: userImage,
   userImageLight: userImageLight,
   userName: "Rus Madrigal",
+  userIntro: "Hola, mi nombre es Rus Madrigal, trabajo en SEO desde el 2009.",
   designations: ["Technical SEO", "Data enthusiast", "Front-End Developer"],
   basicInfo: [
     {

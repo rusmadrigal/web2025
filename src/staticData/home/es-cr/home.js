@@ -196,7 +196,7 @@ export const technologies = [
 
 export const userDetails = [
   {
-    field: "Phone",
+    field: "Teléfono",
     value: "+(506) 8777 3420",
   },
   {
@@ -204,7 +204,7 @@ export const userDetails = [
     value: "+(506) 8777 3420",
   },
   {
-    field: "Language",
+    field: "Idioma",
     value: "English, Spanish",
   },
   {
@@ -221,21 +221,21 @@ export const userDetailsSidebar = {
   userImage: userImage,
   userImageLight: userImageLight,
   userName: "Rus Madrigal",
-  designations: ["Technical SEO", "Data enthusiast", "Front-End Developer"],
+  designations: ["Consultor SEO", "Front-End Developer", "Pura Vida!"],
   basicInfo: [
     {
       id: 1,
-      field: "Residence",
+      field: "Locación",
       value: "Costa Rica",
     },
     {
       id: 2,
-      field: "City",
+      field: "Ciudad",
       value: "San Jose",
     },
     {
       id: 3,
-      field: "SEO since",
+      field: "SEO desde",
       value: "2009",
     },
   ],
