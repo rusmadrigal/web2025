@@ -11,11 +11,17 @@ const RightNav = ({ midContainer }) => {
   const activeMenuItem = useMenuActive(midContainer, ".minfo__nav__items li a");
   const pathname = usePathname();
 
+  // Detecta el dominio base dinámicamente
+  const baseUrl =
+    typeof window !== "undefined"
+      ? window.location.origin // En el navegador
+      : "https://rusmadrigal.com"; // Valor predeterminado para producción
+
   return (
     <div className="minfo__nav__wrapper bg-snowWhite dark:bg-power__black max-xl:hidden fixed top-1/2 -translate-y-1/2 right-4 2xl:right-14 z-999 flex items-center flex-col gap-4 border border-platinum dark:border-metalBlack rounded-4xl px-2.5 py-4">
       {/* <!-- Site Logo Start --> */}
       <div className="flex border rounded-full logo w-15 h-15 border-platinum dark:border-metalBlack flex-center">
-        <Link href={siteSettings?.logo?.url}>
+        <Link href={`${baseUrl}${siteSettings?.logo?.url}`}>
           <Image
             width={"0"}
             height={"0"}
@@ -37,7 +43,7 @@ const RightNav = ({ midContainer }) => {
               className="relative group"
             >
               <Link
-                href={pathname === "/" ? menu?.selector : `/${menu?.selector}`}
+                href={`${baseUrl}${menu?.selector}`}
                 className={`w-9 h-9 rounded-full flex-center ${
                   activeMenuItem === menu?.selector &&
                   "bg-white dark:bg-metalBlack"
