@@ -17,6 +17,11 @@ import { BiCommentDetail } from "react-icons/bi";
 import { FaRegUser, FaYoutube } from "react-icons/fa6";
 import { MdFormatListBulleted } from "react-icons/md";
 
+const baseUrl =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : "https://rusmadrigal.com";
+
 export const siteSettings = {
   logo: {
     image: logo?.src,
@@ -28,56 +33,56 @@ export const siteSettings = {
     {
       id: 1,
       title: "Inicio",
-      selector: "/es-cr/#inicio", // Actualizado
-      url: "",
+      selector: `${baseUrl}/es-cr/#inicio`,
+      url: `${baseUrl}/es-cr`,
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 2,
       title: "Acerca",
-      selector: "https://rusmadrigal.com/es-cr/#acerca", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: `${baseUrl}/es-cr/#acerca`,
+      url: `${baseUrl}/es-cr`,
       Icon: <FaRegUser />,
       notVisibleRoutes: [],
     },
     {
       id: 3,
       title: "Servicios",
-      selector: "https://rusmadrigal.com/es-cr/#servicios", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: `${baseUrl}/es-cr/#servicios`, // Actualizado
+      url: `${baseUrl}/es-cr`,
       Icon: <IoBriefcaseOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 4,
       title: "https://rusmadrigal.com/es-cr/Skills",
-      selector: "https://rusmadrigal.com/es-cr/#skill", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: `${baseUrl}/es-cr/#skill`, // Actualizado
+      url: `${baseUrl}/es-cr`,
       Icon: <SlGraduation />,
       notVisibleRoutes: [],
     },
     {
       id: 5,
       title: "CV",
-      selector: "https://rusmadrigal.com/es-cr/#resume", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: `${baseUrl}/es-cr/#resume`, // Actualizado
+      url: `${baseUrl}/es-cr`,
       Icon: <FaRegFileAlt />,
       notVisibleRoutes: [],
     },
     {
       id: 8,
       title: "Opiniones",
-      selector: "https://rusmadrigal.com/es-cr/#opiniones", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: `${baseUrl}/es-cr/#opiniones`, // Actualizado
+      url: `${baseUrl}/es-cr`,
       Icon: <BiCommentDetail />,
       notVisibleRoutes: [],
     },
     {
       id: 9,
       title: "Contacto",
-      selector: "https://rusmadrigal.com/es-cr/#contacto", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: `${baseUrl}/es-cr/#contacto`, // Actualizado
+      url: `${baseUrl}/es-cr`,
       Icon: <FaRegEnvelope />,
       notVisibleRoutes: [],
     },
