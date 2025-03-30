@@ -28,7 +28,7 @@ export const siteSettings = {
     {
       id: 1,
       title: "Inicio",
-      selector: "#inicio", // Actualizado
+      selector: "https://rusmadrigal.com/es-cr/#inicio", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
@@ -36,7 +36,7 @@ export const siteSettings = {
     {
       id: 2,
       title: "Acerca",
-      selector: "#acerca", // Actualizado
+      selector: "https://rusmadrigal.com/es-cr/#acerca", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <FaRegUser />,
       notVisibleRoutes: [],
@@ -44,15 +44,15 @@ export const siteSettings = {
     {
       id: 3,
       title: "Servicios",
-      selector: "#servicios", // Actualizado
+      selector: "https://rusmadrigal.com/es-cr/#servicios", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <IoBriefcaseOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 4,
-      title: "Skills",
-      selector: "#skill", // Actualizado
+      title: "https://rusmadrigal.com/es-cr/Skills",
+      selector: "https://rusmadrigal.com/es-cr/#skill", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <SlGraduation />,
       notVisibleRoutes: [],
@@ -60,7 +60,7 @@ export const siteSettings = {
     {
       id: 5,
       title: "CV",
-      selector: "#resume", // Actualizado
+      selector: "https://rusmadrigal.com/es-cr/#resume", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <FaRegFileAlt />,
       notVisibleRoutes: [],
@@ -68,7 +68,7 @@ export const siteSettings = {
     {
       id: 8,
       title: "Opiniones",
-      selector: "#opiniones", // Actualizado
+      selector: "https://rusmadrigal.com/es-cr/#opiniones", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <BiCommentDetail />,
       notVisibleRoutes: [],
@@ -76,7 +76,7 @@ export const siteSettings = {
     {
       id: 9,
       title: "Contacto",
-      selector: "#contacto", // Actualizado
+      selector: "https://rusmadrigal.com/es-cr/#contacto", // Actualizado
       url: "https://rusmadrigal.com/es-cr/",
       Icon: <FaRegEnvelope />,
       notVisibleRoutes: [],
