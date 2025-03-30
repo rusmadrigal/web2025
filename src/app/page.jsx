@@ -8,7 +8,7 @@ import Service from "@/src/components/home/Service";
 import Skills from "@/src/components/home/Skills";
 import Testimonial from "@/src/components/home/Testimonial";
 import Footer from "@/src/components/shared/Footer";
-import Layout from "@/layout/Layout";
+import Layout from "/layout/Layout";
 
 export default async function Home() {
   return (

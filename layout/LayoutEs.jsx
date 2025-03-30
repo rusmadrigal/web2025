@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import AnimatedLine from "/src/components/ui/AnimatedLine";
-import useMediaQuery from "/src/hooks/useMediaQuery";
-import RightNav from "/layout/RightNav";
-import SidebarProfile from "/layout/SidebarProfile";
+import AnimatedLine from "@/src/components/ui/AnimatedLine";
+import useMediaQuery from "@/src/hooks/useMediaQuery";
+import RightNav from "/layout/RightnavEs";
+import SidebarProfile from "/layout/SidebarprofileEs";
 import MobileMenuBar from "/layout/mobile/MobileMenuBar";
 import MobileNav from "/layout/mobile/MobileNav";
 import Preloader from "/src/components/shared/Preloader";

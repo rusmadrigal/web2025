@@ -5,6 +5,8 @@ import PhoneIcon from "@/src/components/icons/home/PhoneIcon";
 import SeoIcon from "@/src/components/icons/home/SeoIcon";
 import UiUxIcon from "@/src/components/icons/home/UiUxIcon";
 import WebDevIcon from "@/src/components/icons/home/WebDevIcon";
+
+
 import {
   FaBlog,
   FaBriefcase,
@@ -15,47 +17,47 @@ import {
 import { GrTasks } from "react-icons/gr";
 import { BiCheckDouble, BiCommentCheck } from "react-icons/bi";
 
-import nextjsImage from "@/public/assets/img/skill/nextjs.svg";
-import screamingfrogImage from "@/public/assets/img/skill/screamingfrog.svg";
-import tailwindImage from "@/public/assets/img/skill/tailwind.svg";
-import htmlImage from "@/public/assets/img/skill/html.svg";
-import wordpressImage from "@/public/assets/img/skill/wordpress.svg";
-import jsImage from "@/public/assets/img/skill/js.svg";
-import semrusImage from "@/public/assets/img/skill/semrush.svg";
+import nextjsImage from "/public/assets/img/skill/nextjs.svg";
+import screamingfrogImage from "/public/assets/img/skill/screamingfrog.svg";
+import tailwindImage from "/public/assets/img/skill/tailwind.svg";
+import htmlImage from "/public/assets/img/skill/html.svg";
+import wordpressImage from "/public/assets/img/skill/wordpress.svg";
+import jsImage from "/public/assets/img/skill/js.svg";
+import semrusImage from "/public/assets/img/skill/semrush.svg";
 
-import partner1Image from "@/public/assets/img/partners/logo1.png";
-import partner2Image from "@/public/assets/img/partners/logo2.png";
-import partner3Image from "@/public/assets/img/partners/logo3.png";
-import partner4Image from "@/public/assets/img/partners/logo4.png";
-import partner5Image from "@/public/assets/img/partners/logo5.png";
+import partner1Image from "/public/assets/img/partners/logo1.png";
+import partner2Image from "/public/assets/img/partners/logo2.png";
+import partner3Image from "/public/assets/img/partners/logo3.png";
+import partner4Image from "/public/assets/img/partners/logo4.png";
+import partner5Image from "/public/assets/img/partners/logo5.png";
 
-import userImage from "@/public/assets/img/user-sidebar-thumb.png";
-import userImageLight from "@/public/assets/img/user-sidebar-thumb-light.png";
+import userImage from "/public/assets/img/user-sidebar-thumb.png";
+import userImageLight from "/public/assets/img/user-sidebar-thumb-light.png";
 
-import portfolioImage1Thumb from "@/public/assets/img/portfolio/portfolio-img1.png";
-import portfolioImage1 from "@/public/assets/img/portfolio/portfolio-img1.png";
+import portfolioImage1Thumb from "/public/assets/img/portfolio/portfolio-img1.png";
+import portfolioImage1 from "/public/assets/img/portfolio/portfolio-img1.png";
 
-import portfolioImage2Thumb from "@/public/assets/img/portfolio/portfolio-img2.png";
-import portfolioImage2 from "@/public/assets/img/portfolio/portfolio-img2.png";
+import portfolioImage2Thumb from "/public/assets/img/portfolio/portfolio-img2.png";
+import portfolioImage2 from "/public/assets/img/portfolio/portfolio-img2.png";
 
-import portfolioImage3Thumb from "@/public/assets/img/portfolio/portfolio-img3.png";
-import portfolioImage3 from "@/public/assets/img/portfolio/portfolio-img3.png";
+import portfolioImage3Thumb from "/public/assets/img/portfolio/portfolio-img3.png";
+import portfolioImage3 from "/public/assets/img/portfolio/portfolio-img3.png";
 
-import portfolioImage4Thumb from "@/public/assets/img/portfolio/portfolio-img4.png";
-import portfolioImage4 from "@/public/assets/img/portfolio/portfolio-img4.png";
+import portfolioImage4Thumb from "/public/assets/img/portfolio/portfolio-img4.png";
+import portfolioImage4 from "/public/assets/img/portfolio/portfolio-img4.png";
 
-import projectInner1Image from "@/public/assets/img/blog/article-inner1.png";
-import projectInner2Image from "@/public/assets/img/blog/article-inner2.png";
+import projectInner1Image from "/public/assets/img/blog/article-inner1.png";
+import projectInner2Image from "/public/assets/img/blog/article-inner2.png";
 
-import blog1Thumbnail from "@/public/assets/img/blog/article1.png";
-import blog1Image from "@/public/assets/img/blog/article1.png";
-import blog2Thumbnail from "@/public/assets/img/blog/article2.png";
-import blog2Image from "@/public/assets/img/blog/article2.png";
-import blog3Thumbnail from "@/public/assets/img/blog/article3.png";
-import blog3Image from "@/public/assets/img/blog/article3.png";
+import blog1Thumbnail from "/public/assets/img/blog/article1.png";
+import blog1Image from "/public/assets/img/blog/article1.png";
+import blog2Thumbnail from "/public/assets/img/blog/article2.png";
+import blog2Image from "/public/assets/img/blog/article2.png";
+import blog3Thumbnail from "/public/assets/img/blog/article3.png";
+import blog3Image from "/public/assets/img/blog/article3.png";
 
-import author1 from "@/public/assets/img/testimonial/author1.png";
-import author2 from "@/public/assets/img/testimonial/author2.png";
+import author1 from "/public/assets/img/testimonial/author1.png";
+import author2 from "/public/assets/img/testimonial/author2.png";
 import { IoHomeOutline } from "react-icons/io5";
 
 export const introduce = {
@@ -289,7 +291,7 @@ export const projectExperiences = [
 export const services = {
   servicesHeading: {
     icon: <FaBriefcase className="text-theme" />,
-    title: "SERVICES",
+    title: "SERVICIOS",
     heading: "Servicios",
     coloredHeading: "SEO",
     description:
@@ -331,10 +333,10 @@ export const skills = {
   skillsHeading: {
     icon: <FaGraduationCap className="text-theme" />,
     title: "SKILLS",
-    heading: "Tools &",
-    coloredHeading: "Tech Stack",
+    heading: "Stacks",
+    coloredHeading: "Tecnológicos",
     description:
-      "I am proficient in a variety of SEO tools and tech stacks. Below is a list of the ones I use most frequently in my daily work.",
+      "Un Stack Tecnológico está compuesto por el lenguaje con el que tu sitio está creado, así como otros elementos que lo hacen accesible al usuario. En gran medida la estrategia SEO depende del tipo de tecnología que se haya desplegado en tu proyecto, a continuación te cuento algunas de las tecnologías con las que suelo trabajar.",
   },
   skillsData: [
     {
@@ -378,11 +380,11 @@ export const skills = {
 export const resume = {
   resumeHeading: {
     icon: <FaFolderOpen className="text-theme" />,
-    title: "RESUME",
-    heading: "Work",
-    coloredHeading: "Experience",
+    title: "CV",
+    heading: "Experiencia",
+    coloredHeading: "Laboral",
     description:
-      "Below, you will find information about the companies I've worked for and the roles I've held. This list provides a summary of the most important details (I value your time), but it does not include every company I have worked for.",
+      "Soy un profesional con más de 14 años de experiencia en SEO, especializado en la optimización de sitios web para motores de búsqueda como Google y Bing. He trabajado en diversas industrias, incluyendo viajes, finanzas y comercio electrónico. Mi enfoque se centra en el SEO técnico, la optimización on-page y la creación de estrategias efectivas para mejorar la visibilidad y el rendimiento de los sitios web.",
   },
   resumeData: [
     {
@@ -390,21 +392,21 @@ export const resume = {
       duration: "Feb, 2023 - Current",
       position: "Media Delivery Associate Director",
       description:
-        "SEO Lead for Publicis Groupe in the Global Delivery LATAM division. In addition to managing SEO strategies for European brands, I hold a leadership role in LATAM, responsible for growing the team and collaborating with the business team when new SEO clients are onboarded.",
+        "SEO Lead para Publicis Groupe en la división Global Delivery LATAM. Además de gestionar las estrategias SEO para las marcas europeas, tengo un papel de liderazgo en LATAM, responsable del crecimiento del equipo y de colaborar con el equipo de negocio cuando se incorporan nuevos clientes SEO.",
     },
     {
       platform: "SportsBook Review",
       duration: "2022 - 2023",
       position: "Technical SEO Manager",
       description:
-        "I first joined SportsBook Review in 2016, took a brief hiatus, and returned in 2022. I worked as a Technical SEO Manager, overseeing all aspects of code-level optimization for the main website as well as other sites under the parent brand. My work primarily involved programming languages such as PHP and ReactJS.",
+        "Me uní a SportsBook Review por primera vez en 2016, me tomé un breve descanso y volví en 2022. Trabajé como Director Técnico de SEO, supervisando todos los aspectos de la optimización a nivel de código para el sitio web principal, así como otros sitios bajo la marca matriz. Mi trabajo implicaba principalmente lenguajes de programación como PHP y ReactJS.",
     },
     {
       platform: "TripAdvisor",
       duration: "2018-2021",
       position: "Technical SEO Specialist",
       description:
-        "I had the opportunity to work with Tripadvisor as a contractor. My role focused on code-level optimization, and I also collaborated with the web analytics team.",
+        "Tuve la oportunidad de trabajar con Tripadvisor como contratista. Mi función se centraba en la optimización a nivel de código, y también colaboraba con el equipo de analítica web.",
     },
   ],
 };
@@ -413,32 +415,32 @@ export const educations = {
   educationsHeading: {
     icon: "",
     title: "",
-    heading: "My",
-    coloredHeading: "Education",
+    heading: "Educación",
+    coloredHeading: "Universitaria",
     description:
-      "I’m someone who values experience and proactivity over degrees. I pursued a Bachelor's degree in Business Administration with an emphasis in Marketing at U Latina, San Pedro campus. Additionally, I have completed online studies through various platforms, covering topics such as GA-4, Semrush, Tableau, Adobe, and more.",
+      "Cursé la Licenciatura en Administración de Empresas con énfasis en Mercadotecnia en la U Latina, campus San Pedro. Adicionalmente, he completado estudios en línea a través de varias plataformas, cubriendo temas como GA-4, Semrush, Tableau, Adobe, y más.",
   },
   educationsData: [
     {
       institution: "U Latina, Costa Rica",
       duration: "2009-2014",
-      degree: "Business Bachelor Degree",
+      degree: "Lic. En Administración de Empresas",
       description:
-        "Bachelor's Degree in Business Administration with an emphasis in Marketing.",
+        "Licenciatura en Administración de Empresas con énfasis en Mercadotecnia. Durante mis estudios, adquirí conocimientos en diversas áreas de la administración, incluyendo marketing, finanzas y gestión empresarial.",
     },
     {
       institution: "Boston Institute, Costa Rica",
       duration: "2012 - 2017",
       degree: "Front-End Development",
       description:
-        "Introduction to Object-Oriented Programming with a focus on Front-End Development. During this course, I learned to work with PHP, JavaScript, CSS, HTML, frameworks, and other technologies centered on Front-End development.",
+        "Programa de desarrollo Front-End, donde adquirí habilidades en HTML, CSS y JavaScript. Aprendí a crear sitios web interactivos y atractivos utilizando estas tecnologías.",
     },
     {
       institution: "U Sabana, Colombia",
       duration: "2023",
-      degree: "Agile Methodologies",
+      degree: "Agile Project Management",
       description:
-        "Project management preparation program focused on Agile methodologies, such as Scrum.",
+        "Programa de gestión de proyectos ágiles, donde aprendí a aplicar metodologías ágiles en la gestión de proyectos. Esto me permitió mejorar la eficiencia y la colaboración en equipos de trabajo.",
     },
   ],
 };
@@ -851,11 +853,11 @@ export const blogs = {
 export const testimonials = {
   testimonialsHeading: {
     icon: <BiCommentCheck className="text-theme" />,
-    title: "TESTIMONIAL",
-    heading: "LinkedIn",
-    coloredHeading: "Reviews",
+    title: "OPINIONES",
+    heading: "Reseñas en",
+    coloredHeading: "LinkedIn",
     description:
-      "Here are some reviews extracted from my LinkedIn profile. You can verify their authenticity by visiting my official profile: linkedin.com/in/rusmadrigal/.",
+      "Aquí tienes algunas reseñas extraídas de mi perfil de LinkedIn. Puedes verificar su autenticidad visitando mi perfil oficial: linkedin.com/in/rusmadrigal/.",
   },
   testimonialsData: [
     {
@@ -863,11 +865,10 @@ export const testimonials = {
       image: author1?.src,
       desc: (
         <div className="text-sm md:text-[15px] leading-loose content">
-          Discovering true and good SEO's in Central America is something like
-          finding a needle in a haystack.{" "}
+          Descubrir verdaderos y buenos SEO en Centroamérica es algo así como
+          encontrar una aguja en un pajar.{" "}
           <span className="font-semibold text-theme">
-            If you come upon Rusbell you have found a golden needle. Take care
-            of it!
+            Si te encuentras con Rus, has encontrado una aguja de oro. ¡Cuídale!
           </span>{" "}
         </div>
       ),
@@ -879,10 +880,10 @@ export const testimonials = {
       image: author2?.src,
       desc: (
         <div className="text-sm md:text-[15px] leading-loose content">
-          <span className="font-semibold text-theme">Rusbell</span> is a multi
-          talented young man with excellent customer service skills. He always
-          responds with a professional, up beat and genuinely attentive attitude
-          to all work projects under his responsibility.
+          <span className="font-semibold text-theme">Rus</span> es un joven
+          polifacético con excelentes dotes de atención al cliente. Siempre
+          responde con una actitud profesional, animada y genuinamente atenta a
+          todos los proyectos de trabajo bajo su responsabilidad.
         </div>
       ),
       name: "Faith Anne Mulvihill",
@@ -909,16 +910,16 @@ export const testimonials = {
 export const contactInfo = {
   contactInfoHeading: {
     icon: <FaRegEnvelopeOpen className="text-theme" />,
-    title: "CONTACT",
-    heading: "Contact",
-    coloredHeading: "Me.",
+    title: "CONTACTO",
+    heading: "¿Necesitas",
+    coloredHeading: "SEO?",
     description:
-      "If you need to get in touch with me, please use the contact methods listed below. I’ll do my best to respond as quickly as possible.",
+      "Si tienes alguna pregunta o necesitas más información sobre mis servicios, no dudes en ponerte en contacto conmigo. Estoy aquí para ayudarte a mejorar tu presencia en línea y alcanzar tus objetivos de SEO.",
   },
   contactInfoData: [
     {
       id: 1,
-      field: "Location",
+      field: "Locación",
       data: "San Jose, Costa Rica",
       Icon: <LocationIcon />,
     },

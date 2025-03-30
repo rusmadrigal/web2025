@@ -24,11 +24,12 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "sssssss, I'm Rus Madrigal | Senior Technical SEO & Data Enthusiast",
+  title:
+    "Consultor SEO Costa Rica: Experiencia optimizando para Google & Agentes AI",
   description:
-    "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work..",
+    "Aumenta tu visibilidad online con un Consultor SEO en Costa Rica experto en Google y Agentes AI. Potencia tu posicionamiento hoy.",
   alternates: {
-    canonical: "https://rusmadrigal.com/",
+    canonical: "https://rusmadrigal.com/es-cr",
   },
 };
 

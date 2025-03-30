@@ -1,4 +1,4 @@
-import Button from "@/src/components/ui/Button";
+import ButtonEs from "@/src/components/ui/ButtonEs";
 import heroImg from "@/public/assets/img/hero-img-1.png";
 import heroImgDark from "@/public/assets/img/hero-img-2.png";
 import { introduce, partners } from "@/src/staticData/home/es-cr/home";
