@@ -40,7 +40,7 @@ export default function RootLayout({ children }) {
         {/* Favicon */}
         <link rel="icon" href="/assets/img/site-logo.svg" sizes="any" />
         {/* Canonical */}
-        <link rel="canonical" href="https://rusmadrigal.com/" />
+        <link rel="canonical" href="https://rusmadrigal.com/es-cr/" />
       </head>
       <body
         className={`${poppins.className} relative`}
