@@ -28,8 +28,8 @@ export const siteSettings = {
     {
       id: 1,
       title: "Inicio",
-      selector: "#inicio", // Actualizado
-      url: "/es-cr/",
+      selector: "/es-cr/#inicio", // Actualizado
+      url: "",
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
     },
