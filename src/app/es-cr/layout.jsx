@@ -25,7 +25,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title:
-    "Consultor SEO Costa Rica: Experiencia optimizando para Google & Agentes AI",
+    "Consultor SEO Costa Rica: Experiencia optimizando para Google & Agentes AI.",
   description:
     "Aumenta tu visibilidad online con un Consultor SEO en Costa Rica experto en Google y Agentes AI. Potencia tu posicionamiento hoy.",
   alternates: {
