@@ -28,8 +28,8 @@ export const siteSettings = {
     {
       id: 1,
       title: "Inicio",
-      selector: "https://rusmadrigal.com/es-cr/#inicio", // Actualizado
-      url: "https://rusmadrigal.com/es-cr/",
+      selector: "#inicio", // Actualizado
+      url: "/es-cr/",
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
     },
