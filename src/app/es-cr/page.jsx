@@ -5,7 +5,7 @@ import HeroEs from "@/src/components/home/es-cr/HeroEs";
 import Portfolio from "@/src/components/home/Portfolio";
 import ResumeEs from "@/src/components/home/es-cr/ResumeEs";
 import ServiceEs from "@/src/components/home/es-cr/ServiceEs";
-import SkillsES from "/src/components/home/es-cr/SkillsES";
+import SkillsES from "@/src/components/home/es-cr/SkillsES";
 import TestimonialEs from "@/src/components/home/es-cr/TestimonialEs";
 import Footer from "@/src/components/shared/Footer";
 import Layout from "/layout/LayoutEs";
