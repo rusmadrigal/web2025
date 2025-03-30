@@ -21,14 +21,14 @@ export const siteSettings = {
   logo: {
     image: logo?.src,
     alt: "Rus Madrigal",
-    url: "/",
+    url: "/es-cr",
     text: "Rus Madrigal",
   },
   headersMenu: [
     {
       id: 1,
       title: "Inicio",
-      selector: "#inicio",
+      selector: "/es-cr/#inicio", // Actualizado
       url: "/es-cr",
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
@@ -36,7 +36,7 @@ export const siteSettings = {
     {
       id: 2,
       title: "Acerca",
-      selector: "#acerca",
+      selector: "/es-cr/#acerca", // Actualizado
       url: "/es-cr",
       Icon: <FaRegUser />,
       notVisibleRoutes: [],
@@ -44,7 +44,7 @@ export const siteSettings = {
     {
       id: 3,
       title: "Servicios",
-      selector: "#servicios",
+      selector: "/es-cr/#servicios", // Actualizado
       url: "/es-cr",
       Icon: <IoBriefcaseOutline />,
       notVisibleRoutes: [],
@@ -52,40 +52,23 @@ export const siteSettings = {
     {
       id: 4,
       title: "Skills",
-      selector: "#skill",
-      url: "/",
+      selector: "/es-cr/#skill", // Actualizado
+      url: "/es-cr",
       Icon: <SlGraduation />,
       notVisibleRoutes: [],
     },
     {
       id: 5,
       title: "CV",
-      selector: "#resume",
-      url: "/",
+      selector: "/es-cr/#resume", // Actualizado
+      url: "/es-cr",
       Icon: <FaRegFileAlt />,
       notVisibleRoutes: [],
     },
-    /*{
-      id: 6,
-      title: "Portfolio",
-      selector: "#portfolio",
-      url: "/",
-      Icon: <MdFormatListBulleted />,
-      notVisibleRoutes: [],
-    },
-    {
-      id: 7,
-      title: "Blog",
-      selector: "#blog",
-      url: "/",
-      Icon: <LiaBlogSolid />,
-      notVisibleRoutes: [],
-    },
-    */
     {
       id: 8,
       title: "Opiniones",
-      selector: "#opiniones",
+      selector: "/es-cr/#opiniones", // Actualizado
       url: "/es-cr",
       Icon: <BiCommentDetail />,
       notVisibleRoutes: [],
@@ -93,7 +76,7 @@ export const siteSettings = {
     {
       id: 9,
       title: "Contacto",
-      selector: "#contacto",
+      selector: "/es-cr/#contacto", // Actualizado
       url: "/es-cr",
       Icon: <FaRegEnvelope />,
       notVisibleRoutes: [],
