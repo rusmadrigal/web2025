@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import ProjectDescription from "@/src/components/project/ProjectDescription";
 import ProjectHero from "@/src/components/project/ProjectHero";
-import Layout from "@/layout/Layout";
+import Layout from "/layout/Layout";
 import { portfolio } from "@/src/staticData/home/home";
 import Footer from "@/src/components/shared/Footer";
 
