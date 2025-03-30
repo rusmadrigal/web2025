@@ -4,7 +4,7 @@ import BlogComment from "@/src/components/blog/BlogComment";
 import BlogDescription from "@/src/components/blog/BlogDescription";
 import BlogHero from "@/src/components/blog/BlogHero";
 import Footer from "@/src/components/shared/Footer";
-import Layout from "@/layout/Layout";
+import Layout from "/layout/Layout";
 import { blogs } from "@/src/staticData/home/home";
 import { useEffect, useState } from "react";
 
