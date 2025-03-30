@@ -28,56 +28,56 @@ export const siteSettings = {
     {
       id: 1,
       title: "Inicio",
-      selector: "/es-cr/#inicio", // Actualizado
-      url: "/es-cr",
+      selector: "#inicio", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 2,
       title: "Acerca",
-      selector: "/es-cr/#acerca", // Actualizado
-      url: "/es-cr",
+      selector: "#acerca", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <FaRegUser />,
       notVisibleRoutes: [],
     },
     {
       id: 3,
       title: "Servicios",
-      selector: "/es-cr/#servicios", // Actualizado
-      url: "/es-cr",
+      selector: "#servicios", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <IoBriefcaseOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 4,
       title: "Skills",
-      selector: "/es-cr/#skill", // Actualizado
-      url: "/es-cr",
+      selector: "#skill", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <SlGraduation />,
       notVisibleRoutes: [],
     },
     {
       id: 5,
       title: "CV",
-      selector: "/es-cr/#resume", // Actualizado
-      url: "/es-cr",
+      selector: "#resume", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <FaRegFileAlt />,
       notVisibleRoutes: [],
     },
     {
       id: 8,
       title: "Opiniones",
-      selector: "/es-cr/#opiniones", // Actualizado
-      url: "/es-cr",
+      selector: "#opiniones", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <BiCommentDetail />,
       notVisibleRoutes: [],
     },
     {
       id: 9,
       title: "Contacto",
-      selector: "/es-cr/#contacto", // Actualizado
-      url: "/es-cr",
+      selector: "#contacto", // Actualizado
+      url: "https://rusmadrigal.com/es-cr/",
       Icon: <FaRegEnvelope />,
       notVisibleRoutes: [],
     },
