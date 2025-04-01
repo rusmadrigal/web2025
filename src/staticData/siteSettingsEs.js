@@ -88,7 +88,7 @@ export const siteSettings = {
       name: "English",
       tooltip: "English",
       Icon: <span role="img" aria-label="English">🇬🇧</span>,
-      url: "/",
+      url: "https://rusmadrigal.com/",
     },
    /* {
       id: 2,
