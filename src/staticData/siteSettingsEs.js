@@ -82,10 +82,27 @@ export const siteSettings = {
       notVisibleRoutes: [],
     },
   ],
+  locationMenu: [
+    {
+      id: 1,
+      name: "English",
+      tooltip: "English",
+      Icon: <span role="img" aria-label="English">🇬🇧</span>,
+      url: "/",
+    },
+   /* {
+      id: 2,
+      name: "Linkedin",
+      tooltip: "Share with Linkedin",
+      Icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/rusmadrigal/",
+    },*/
+  ],
   socialMedias: [
     {
       id: 1,
       name: "YouTube",
+
       tooltip: "YouTube",
       Icon: <FaYoutube />,
       url: "https://www.youtube.com/@rusmadrigal",
@@ -98,6 +115,7 @@ export const siteSettings = {
       url: "https://www.linkedin.com/in/rusmadrigal/",
     },
   ],
+  
   preloader: {
     image: logo?.src,
   },

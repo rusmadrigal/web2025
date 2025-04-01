@@ -115,6 +115,7 @@ export const siteSettings = {
       url: "https://www.linkedin.com/in/rusmadrigal/",
     },
   ],
+  
   preloader: {
     image: logo?.src,
   },
