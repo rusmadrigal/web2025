@@ -87,10 +87,14 @@ export const siteSettings = {
       id: 1,
       name: "English",
       tooltip: "English",
-      Icon: <span role="img" aria-label="English">🇬🇧</span>,
+      Icon: (
+        <span role="img" aria-label="English">
+          🇬🇧
+        </span>
+      ),
       url: "/",
     },
-   /* {
+    /* {
       id: 2,
       name: "Linkedin",
       tooltip: "Share with Linkedin",
@@ -115,7 +119,7 @@ export const siteSettings = {
       url: "https://www.linkedin.com/in/rusmadrigal/",
     },
   ],
-  
+
   preloader: {
     image: logo?.src,
   },

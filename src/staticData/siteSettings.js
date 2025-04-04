@@ -21,88 +21,92 @@ export const siteSettings = {
   logo: {
     image: logo?.src,
     alt: "Rus Madrigal",
-    url: "/",
+    url: "/", // Ruta relativa
     text: "Rus Madrigal",
   },
   headersMenu: [
     {
       id: 1,
       title: "Home",
-      selector: "#home",
-      url: "/",
+      selector: "#home", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 2,
       title: "About",
-      selector: "#about",
-      url: "/",
+      selector: "#about", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <FaRegUser />,
       notVisibleRoutes: [],
     },
     {
       id: 3,
-      title: "Service",
-      selector: "#service",
-      url: "/",
+      title: "Services",
+      selector: "#service", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <IoBriefcaseOutline />,
       notVisibleRoutes: [],
     },
     {
       id: 4,
       title: "Skills",
-      selector: "#skill",
-      url: "/",
+      selector: "#skill", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <SlGraduation />,
       notVisibleRoutes: [],
     },
     {
       id: 5,
       title: "Resume",
-      selector: "#resume",
-      url: "/",
+      selector: "#resume", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <FaRegFileAlt />,
       notVisibleRoutes: [],
     },
-    /*{
-      id: 6,
-      title: "Portfolio",
-      selector: "#portfolio",
-      url: "/",
-      Icon: <MdFormatListBulleted />,
-      notVisibleRoutes: [],
-    },
-    {
-      id: 7,
-      title: "Blog",
-      selector: "#blog",
-      url: "/",
-      Icon: <LiaBlogSolid />,
-      notVisibleRoutes: [],
-    },
-    */
     {
       id: 8,
-      title: "Testimonial",
-      selector: "#testimonial",
-      url: "/",
+      title: "Testimonials",
+      selector: "#testimonial", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <BiCommentDetail />,
       notVisibleRoutes: [],
     },
     {
       id: 9,
       title: "Contact",
-      selector: "#contact",
-      url: "/",
+      selector: "#contact", // Ruta relativa
+      url: "/", // Ruta relativa
       Icon: <FaRegEnvelope />,
       notVisibleRoutes: [],
     },
+  ],
+  locationMenu: [
+    {
+      id: 1,
+      name: "Spanish",
+      tooltip: "Spanish",
+      Icon: (
+        <span role="img" aria-label="Spanish">
+          🇨🇷
+        </span>
+      ),
+      url: "/es-cr", // Ruta relativa
+    },
+    /* {
+      id: 2,
+      name: "Linkedin",
+      tooltip: "Share with Linkedin",
+      Icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/rusmadrigal/",
+    },*/
   ],
   socialMedias: [
     {
       id: 1,
       name: "YouTube",
+
       tooltip: "YouTube",
       Icon: <FaYoutube />,
       url: "https://www.youtube.com/@rusmadrigal",
@@ -115,7 +119,7 @@ export const siteSettings = {
       url: "https://www.linkedin.com/in/rusmadrigal/",
     },
   ],
-  
+
   preloader: {
     image: logo?.src,
   },
