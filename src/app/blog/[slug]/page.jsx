@@ -1,3 +1,6 @@
+// temporalmente desactivado
+
+/*
 "use client";
 
 import BlogComment from "@/src/components/blog/BlogComment";
@@ -26,7 +29,6 @@ export default function SingleBlog({ params }) {
       >
         <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
           <BlogHero blog={blog} />
-
           <BlogDescription blog={blog} />
         </div>
       </div>
@@ -34,3 +36,4 @@ export default function SingleBlog({ params }) {
     </Layout>
   );
 }
+*/
