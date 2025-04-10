@@ -12,6 +12,11 @@ const nextConfig = {
         destination: "/", // Reemplaza con la URL de destino
         permanent: true,
       },
+      {
+        source: "/contacto",
+        destination: "/", // Reemplaza con la URL de destino
+        permanent: true,
+      },
     ];
   },
 };
