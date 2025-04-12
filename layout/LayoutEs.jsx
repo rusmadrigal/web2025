@@ -5,8 +5,8 @@ import AnimatedLine from "@/src/components/ui/AnimatedLine";
 import useMediaQuery from "@/src/hooks/useMediaQuery";
 import RightNav from "/layout/RightnavEs";
 import SidebarProfile from "/layout/SidebarprofileEs";
-import MobileMenuBar from "/layout/mobile/MobileMenuBar";
-import MobileNav from "/layout/mobile/MobileNav";
+import MobileMenuBar from "/layout/mobile/MobileMenuBarEs";
+import MobileNav from "/layout/mobile/MobileNavEs";
 import Preloader from "/src/components/shared/Preloader";
 import { usePathname } from "next/navigation";
 
