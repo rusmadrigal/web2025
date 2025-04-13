@@ -1,19 +1,15 @@
-/** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: "https://rusmadrigal.com", // ✅ Tu dominio principal
-    generateRobotsTxt: true,
-    changefreq: "monthly",
-    priority: 0.7,
-    sitemapSize: 7000,
-    alternateRefs: [
-      {
-        href: "https://rusmadrigal.com",
-        hreflang: "en",
-      },
-      {
-        href: "https://rusmadrigal.com/es-cr",
-        hreflang: "es-cr",
-      },
-    ],
-  };
-  
+  siteUrl: "https://rusmadrigal.com",
+  generateRobotsTxt: true,
+  generateIndexSitemap: false,
+  changefreq: "monthly",
+  priority: 0.7,
+  exclude: [],
+  additionalPaths: async (config) => {
+    return [
+      { loc: "/", changefreq: "monthly", priority: 1.0 },
+      { loc: "/es-cr", changefreq: "monthly", priority: 1.0 },
+      // Podés agregar más manualmente si tenés
+    ];
+  },
+};
