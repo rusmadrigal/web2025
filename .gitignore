@@ -69,3 +69,7 @@ build/
 
 # Storybook
 storybook-static/
+
+# sitemaps
+public/robots.txt
+public/sitemap.xml
