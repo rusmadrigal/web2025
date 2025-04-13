@@ -17,7 +17,7 @@ export async function generateMetadata() {
     description:
       "Profesional SEO con más de 14 años de experiencia. Aquí puedes encontrar mi CV y ejemplos de mi trabajo previo.",
     alternates: {
-      canonical: "https://rusmadrigal.com/es-cr/",
+      canonical: "https://rusmadrigal.com/es-cr",
     },
   };
 }
