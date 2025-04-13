@@ -1,5 +1,3 @@
-// app/es-cr/layout.jsx
-
 import "../globals.css";
 import "react-modern-drawer/dist/index.css";
 import "swiper/css";
@@ -12,9 +10,10 @@ const CustomCursor = dynamic(
   { ssr: false }
 );
 
-const BackToTop = dynamic(() => import("@/src/components/shared/BackToTop"), {
-  ssr: false,
-});
+const BackToTop = dynamic(
+  () => import("@/src/components/shared/BackToTop"),
+  { ssr: false }
+);
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700"],
