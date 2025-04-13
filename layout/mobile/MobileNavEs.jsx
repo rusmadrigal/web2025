@@ -64,7 +64,7 @@ const MobileNav = ({ isOpen, toggleDrawer }) => {
         </ul>
         <br />
         <div className="mb-4 font-medium text-black dark:text-white menu-title text-md">
-          Get in Touch
+          Redes Sociales
         </div>
         <div className="flex items-center space-x-4 social-icons">
           {siteSettings?.socialMedias?.map((item, i) => (

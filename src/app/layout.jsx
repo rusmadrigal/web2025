@@ -34,7 +34,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning={true} className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning={true} className="scroll-smooth, dark">
       <head>
         {/* Favicon */}
         <link rel="icon" href="/assets/img/site-logo.svg" sizes="any" />
@@ -50,7 +50,6 @@ export default function RootLayout({ children }) {
             {children}
             <CustomCursor />
             <BackToTop />
-            <ModeSwitcher />
           </main>
         </ThemeProvider>
       </body>
