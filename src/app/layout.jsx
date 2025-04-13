@@ -13,7 +13,6 @@ import "react-circular-progressbar/dist/styles.css";
 import CustomCursor from "@/src/components/shared/CustomCursor";
 import { Poppins } from "next/font/google";
 import BackToTop from "@/src/components/shared/BackToTop";
-import ModeSwitcher from "@/src/components/shared/ModeSwitcher";
 import { ThemeProvider } from "../context/theme-provider";
 
 const poppins = Poppins({
