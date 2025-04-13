@@ -53,7 +53,7 @@ const ModeSwitcher = () => {
           </div>
           <div
             className="switcher-input rounded-lg text-lg flex-[1] text-center transition cursor-pointer"
-            data-theme="light"
+            data-theme="dark"
           >
             <button
               className="border w-full px-4 py-4 flex flex-col gap-1 justify-center items-center [&.active]:bg-flashWhite [&.active]:text-black dark:text-white rounded-md"
