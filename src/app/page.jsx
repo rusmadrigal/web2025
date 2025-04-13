@@ -10,6 +10,18 @@ import Testimonial from "@/src/components/home/Testimonial";
 import Footer from "@/src/components/shared/Footer";
 import Layout from "/layout/Layout";
 
+// ✅ Metadata para SEO versión en inglés
+export async function generateMetadata() {
+  return {
+    title: "Hello, I'm Rus Madrigal | Senior Technical SEO & Data Enthusiast",
+    description:
+      "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work.",
+    alternates: {
+      canonical: "https://rusmadrigal.com/",
+    },
+  };
+}
+
 export default async function Home() {
   return (
     <Layout>

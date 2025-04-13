@@ -1,19 +1,12 @@
+// app/layout.jsx
+
 import "./globals.css";
-
-// External styles
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/effect-creative";
-import "swiper/css/effect-coverflow";
 import "react-modern-drawer/dist/index.css";
-import "react-circular-progressbar/dist/styles.css";
-// import "tw-elements-react/dist/css/tw-elements-react.min.css";
+import "swiper/css";
 
-import CustomCursor from "@/src/components/shared/CustomCursor";
 import { Poppins } from "next/font/google";
+import CustomCursor from "@/src/components/shared/CustomCursor";
 import BackToTop from "@/src/components/shared/BackToTop";
-import { ThemeProvider } from "../context/theme-provider";
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -25,7 +18,7 @@ const poppins = Poppins({
 export const metadata = {
   title: "Hello, I'm Rus Madrigal | Senior Technical SEO & Data Enthusiast",
   description:
-    "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work..",
+    "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work.",
   alternates: {
     canonical: "https://rusmadrigal.com/",
   },
@@ -33,24 +26,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" suppressHydrationWarning={true} className="scroll-smooth, dark">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* Favicon */}
         <link rel="icon" href="/assets/img/site-logo.svg" sizes="any" />
-        {/* Canonical */}
         <link rel="canonical" href="https://rusmadrigal.com/" />
       </head>
-      <body
-        className={`${poppins.className} relative`}
-        suppressHydrationWarning={true}
-      >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          <main>
-            {children}
-            <CustomCursor />
-            <BackToTop />
-          </main>
-        </ThemeProvider>
+      <body className={`${poppins.className} relative`}>
+        <main>
+          {children}
+          <CustomCursor />
+          <BackToTop />
+        </main>
       </body>
     </html>
   );
