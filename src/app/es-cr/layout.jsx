@@ -1,6 +1,6 @@
-// app/layout.jsx
+// app/es-cr/layout.jsx
 
-import "./globals.css";
+import "../globals.css";
 import "react-modern-drawer/dist/index.css";
 import "swiper/css";
 
@@ -10,13 +10,13 @@ import Script from "next/script";
 
 const CustomCursor = dynamic(
   () => import("@/src/components/shared/CustomCursor"),
-  {
-    ssr: false,
-  }
+  { ssr: false }
 );
-const BackToTop = dynamic(() => import("@/src/components/shared/BackToTop"), {
-  ssr: false,
-});
+
+const BackToTop = dynamic(
+  () => import("@/src/components/shared/BackToTop"),
+  { ssr: false }
+);
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -26,19 +26,19 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Hello, I'm Rus Madrigal | Senior Technical SEO & Data Enthusiast",
+  title: "Hola, soy Rus Madrigal | SEO Técnico & Estratega de Datos",
   description:
-    "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work.",
+    "Profesional en SEO con más de 14 años de experiencia. Aquí podés ver mi CV y proyectos anteriores.",
   alternates: {
-    canonical: "https://rusmadrigal.com/",
+    canonical: "https://rusmadrigal.com/es-cr",
   },
 };
 
-export default function RootLayout({ children }) {
+export default function SpanishLayout({ children }) {
   return (
-    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+    <html lang="es-CR" className="dark scroll-smooth" suppressHydrationWarning>
       <head>
-        {/* GTM Head Script */}
+        {/* GTM script */}
         <Script
           id="gtm-head"
           strategy="afterInteractive"
@@ -54,7 +54,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${poppins.className} relative`}>
-        {/* GTM NoScript */}
+        {/* GTM noscript fallback */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-K2HNLR7W"
