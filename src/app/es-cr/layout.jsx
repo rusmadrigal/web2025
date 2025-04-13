@@ -1,6 +1,6 @@
 // app/es-cr/layout.jsx
 
-import "../../globals.css";
+import "../globals.css";
 import "react-modern-drawer/dist/index.css";
 import "swiper/css";
 
