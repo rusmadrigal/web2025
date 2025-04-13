@@ -7,15 +7,12 @@ import RightNav from "/layout/RightNav";
 import SidebarProfile from "/layout/SidebarProfile";
 import MobileMenuBar from "/layout/mobile/MobileMenuBar";
 import MobileNav from "/layout/mobile/MobileNav";
-import Preloader from "/src/components/shared/Preloader";
 import { usePathname } from "next/navigation";
 
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [loader, setLoader] = useState(true);
   const isMobile = useMediaQuery("(max-width: 1199px)");
   const midContainer = useRef(null);
-  const pathname = usePathname();
 
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -26,31 +23,6 @@ const Layout = ({ children }) => {
       toggleDrawer();
     }
   }, [isMobile]);
-
-  useEffect(() => {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(
-      navigator.userAgent
-    );
-
-    if (isMobile) {
-      setLoader(false);
-    } else {
-      const preloaderElement = document.getElementById("preloader");
-
-      const preloadedTimeout = setTimeout(() => {
-        preloaderElement && preloaderElement.classList.add("preloaded");
-      }, 1000);
-
-      const loaderTimeout = setTimeout(() => {
-        setLoader(false);
-      }, 2000);
-
-      return () => {
-        clearTimeout(preloadedTimeout);
-        clearTimeout(loaderTimeout);
-      };
-    }
-  }, []);
 
   useEffect(() => {
     const scrollToSection = () => {
@@ -73,16 +45,11 @@ const Layout = ({ children }) => {
     return () => {
       window.removeEventListener("hashchange", handleHashChange);
     };
-  }, [loader]);
-
-  if (loader && pathname === "/") {
-    return <Preloader />;
-  }
+  }, []);
 
   return (
     <div>
       <div className="relative pt-10 minfo__app max-xl:pt-20">
-        {/* <div className="menu-overlay fixed top-0 left-0 w-full h-full bg-black/60 transition-all duration-200 z-999 opacity-0 invisible [&.is-menu-open]:visible [&.is-menu-open]:opacity-100"></div> */}
         <div className="max-lg:px-4">
           <MobileMenuBar toggleDrawer={toggleDrawer} />
           <MobileNav isOpen={isOpen} toggleDrawer={toggleDrawer} />
