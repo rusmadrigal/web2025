@@ -11,33 +11,43 @@ const useMenuActive = (ref, selector) => {
       if (!rightContainer) return;
 
       const scrollPosition = window.scrollY;
-
-      // Determine the active menu item based on scroll position
       const menuItems = document.querySelectorAll(selector);
 
       let activeMenu = null;
-      menuItems.forEach((menuItem) => {
-        const targetSection = document.querySelector(
-          menuItem.getAttribute("data-section")
-        );
 
+      menuItems.forEach((menuItem) => {
+        const rawSection = menuItem.getAttribute("data-section");
+
+        if (!rawSection) return;
+
+        // ✅ Extraer solo el fragmento ID del selector
+        let sectionId = null;
+
+        if (rawSection.startsWith("#")) {
+          sectionId = rawSection;
+        } else if (rawSection.includes("#")) {
+          const parts = rawSection.split("#");
+          sectionId = `#${parts[1]}`;
+        }
+
+        if (!sectionId) return;
+
+        const targetSection = document.querySelector(sectionId);
         if (!targetSection) return;
 
         const targetSectionOffset = targetSection.offsetTop;
         const targetSectionHeight = targetSection.offsetHeight;
 
-        // Adjust the conditions to consider both start and end points of the section
         if (
           scrollPosition >= targetSectionOffset &&
           scrollPosition < targetSectionOffset + targetSectionHeight
         ) {
-          activeMenu = menuItem.getAttribute("data-section");
+          activeMenu = rawSection;
         } else if (
-          // Add a condition for the bottom of the section
           scrollPosition >= targetSectionOffset - window.innerHeight / 2 &&
           scrollPosition < targetSectionOffset
         ) {
-          activeMenu = menuItem.getAttribute("data-section");
+          activeMenu = rawSection;
         }
       });
 
@@ -45,11 +55,8 @@ const useMenuActive = (ref, selector) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [ref, selector]);
 
   return activeMenuItem;
 };
