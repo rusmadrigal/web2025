@@ -12,7 +12,7 @@ const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  display: "swap",
+  display: "swap", // ✅ evita layout shift
 });
 
 export const metadata = {
@@ -27,10 +27,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
-      <head>
-        <link rel="icon" href="/assets/img/site-logo.svg" sizes="any" />
-        <link rel="canonical" href="https://rusmadrigal.com/" />
-      </head>
       <body className={`${poppins.className} relative`}>
         <main>
           {children}

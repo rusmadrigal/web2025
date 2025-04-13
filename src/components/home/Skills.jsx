@@ -8,6 +8,7 @@ import { CircularProgressbarWithChildren } from "react-circular-progressbar";
 import CountUp from "react-countup";
 import SectionHeading from "../shared/SectionHeading";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import Image from "next/image"; // ✅ IMPORTACIÓN AÑADIDA
 
 const Skills = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -80,7 +81,14 @@ const Skills = () => {
                 {skills?.skillsData?.map((service, i) => (
                   <SwiperSlide key={i}>
                     <div className="space-y-5 text-center swiper-slide">
-                      <img src={service?.image} alt={service?.name} />
+                      <Image
+                        src={service?.image}
+                        alt={service?.name || "Skill image"}
+                        width={80}
+                        height={80}
+                        className="mx-auto w-20 h-20 object-contain"
+                      />
+
                       <div className="!w-32 !h-32 md:!w-40 md:!h-40 mx-auto">
                         <CountUp
                           start={0}
@@ -154,6 +162,7 @@ const Skills = () => {
             </div>
           </div>
         </div>
+
         <div className="skills-slider-navigation flex justify-center items-center gap-2.5 mt-12 md:absolute md:top-16 lg:top-20 md:right-8 lg:right-13">
           <button
             className="group transition border rounded-full button-prev w-11 h-11 group border-platinum dark:border-greyBlack flex-center hover:bg-theme hover:border-theme"
