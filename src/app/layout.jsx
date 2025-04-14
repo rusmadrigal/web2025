@@ -11,10 +11,9 @@ const CustomCursor = dynamic(
   { ssr: false }
 );
 
-const BackToTop = dynamic(
-  () => import("@/src/components/shared/BackToTop"),
-  { ssr: false }
-);
+const BackToTop = dynamic(() => import("@/src/components/shared/BackToTop"), {
+  ssr: false,
+});
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -29,6 +28,9 @@ export const metadata = {
     "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work.",
   alternates: {
     canonical: "https://rusmadrigal.com/",
+  },
+  icons: {
+    icon: "/assets/img/favicon.ico",
   },
 };
 

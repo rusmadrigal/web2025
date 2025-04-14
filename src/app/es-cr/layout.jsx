@@ -10,10 +10,9 @@ const CustomCursor = dynamic(
   { ssr: false }
 );
 
-const BackToTop = dynamic(
-  () => import("@/src/components/shared/BackToTop"),
-  { ssr: false }
-);
+const BackToTop = dynamic(() => import("@/src/components/shared/BackToTop"), {
+  ssr: false,
+});
 
 const poppins = Poppins({
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -28,6 +27,9 @@ export const metadata = {
     "Profesional en SEO con más de 14 años de experiencia. Aquí podés ver mi CV y proyectos anteriores.",
   alternates: {
     canonical: "https://rusmadrigal.com/es-cr",
+  },
+  icons: {
+    icon: "/assets/img/favicon.ico",
   },
 };
 
