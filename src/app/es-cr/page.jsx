@@ -13,7 +13,7 @@ import Layout from "/layout/LayoutEs";
 // ✅ Metadata para SEO versión en español
 export async function generateMetadata() {
   return {
-    title: "Hola, soy Rus Madrigal | SEO Técnico Senior y Entusiasta de Datos",
+    title: "Consultor SEO Costa Rica +14 años de experiencia | Rus Madrigal",
     description:
       "Profesional SEO con más de 14 años de experiencia. Aquí puedes encontrar mi CV y ejemplos de mi trabajo previo.",
     alternates: {

@@ -22,7 +22,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  title: "Hola, soy Rus Madrigal | SEO Técnico & Estratega de Datos",
+  title: "Consultor SEO Costa Rica +14 años de experiencia | Rus Madrigal",
   description:
     "Profesional en SEO con más de 14 años de experiencia. Aquí podés ver mi CV y proyectos anteriores.",
   alternates: {
