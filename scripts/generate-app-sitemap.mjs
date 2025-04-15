@@ -37,7 +37,6 @@ async function getStaticPaths() {
       file: "src/app/es-cr/insights/page.jsx",
     },
   ];
-  
 
   for (const route of conditionalRoutes) {
     const exists = staticFiles.includes(route.file);
@@ -60,11 +59,17 @@ async function getStaticPaths() {
     if (slugMatch && slugMatch[1]) {
       const slug = slugMatch[1];
 
-      // Solo inglés por ahora
+      // ✅ Inglés (activo por defecto)
       allPaths.add(`/insights/${slug}`);
 
-      // ✅ Activar esto cuando tengas /es-cr/insights/[slug] funcionando
-      // allPaths.add(`/es-cr/insights/${slug}`);
+      // ✅ Español (comentado por ahora)
+      // Descomenta este bloque cuando tengas /es-cr/insights/[slug] funcionando
+      /*
+      const esCrInsightsExists = staticFiles.includes("src/app/es-cr/insights/page.jsx");
+      if (esCrInsightsExists) {
+        allPaths.add(`/es-cr/insights/${slug}`);
+      }
+      */
     }
   }
 
