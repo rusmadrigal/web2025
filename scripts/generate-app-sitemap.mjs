@@ -12,25 +12,41 @@ async function getStaticPaths() {
     "!src/app/**/_*.jsx",
   ]);
 
-  const basePaths = staticFiles.map((file) => {
-    let route = file
-      .replace("src/app", "")
-      .replace("/page.jsx", "")
-      .replace(/\/\[\w+\]/g, "");
-
-    return route === "" ? "/" : route;
-  });
-
   const allPaths = new Set();
 
-  basePaths.forEach((base) => {
-    defaultLocales.forEach((locale) => {
-      const loc = locale + base;
-      allPaths.add(loc.endsWith("/") && loc !== "/" ? loc.slice(0, -1) : loc);
-    });
-  });
+  // ✅ Incluir solo rutas base que tengan un page.jsx y contenido real
+  const conditionalRoutes = [
+    {
+      path: "",
+      route: "/",
+      file: "src/app/page.jsx",
+    },
+    {
+      path: "",
+      route: "/insights",
+      file: "src/app/insights/page.jsx",
+    },
+    {
+      path: "/es-cr",
+      route: "/es-cr",
+      file: "src/app/es-cr/page.jsx",
+    },
+    {
+      path: "/es-cr",
+      route: "/es-cr/insights",
+      file: "src/app/es-cr/insights/page.jsx",
+    },
+  ];
+  
 
-  // ✅ Extraer slugs directamente desde el texto de los .js
+  for (const route of conditionalRoutes) {
+    const exists = staticFiles.includes(route.file);
+    if (exists) {
+      allPaths.add(route.route);
+    }
+  }
+
+  // ✅ Agregar slugs solo para insights si existen en content/blogs
   const blogFiles = await globby([
     "src/content/blogs/*.js",
     "!src/content/blogs/allBlogs.js"
@@ -40,14 +56,15 @@ async function getStaticPaths() {
     const filePath = path.join(process.cwd(), file);
     const fileContent = await fs.readFile(filePath, "utf-8");
 
-    // Regex para extraer el valor del slug: "nombre"
     const slugMatch = fileContent.match(/slug:\s*["'`](.*?)["'`]/);
     if (slugMatch && slugMatch[1]) {
       const slug = slugMatch[1];
-      defaultLocales.forEach((locale) => {
-        const url = `${locale}/insights/${slug}`;
-        allPaths.add(url);
-      });
+
+      // Solo inglés por ahora
+      allPaths.add(`/insights/${slug}`);
+
+      // ✅ Activar esto cuando tengas /es-cr/insights/[slug] funcionando
+      // allPaths.add(`/es-cr/insights/${slug}`);
     }
   }
 
