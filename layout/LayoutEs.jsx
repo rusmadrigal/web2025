@@ -5,8 +5,8 @@ import AnimatedLine from "@/src/components/ui/AnimatedLine";
 import useMediaQuery from "@/src/hooks/useMediaQuery";
 import RightNav from "/layout/RightnavEs";
 import SidebarProfile from "/layout/SidebarprofileEs";
-import MobileMenuBar from "../layout/mobile/MobileMenuBarEs";
-import MobileNav from "../layout/mobile/MobileNavEs";
+import MobileMenuBar from "/layout/mobile/MobileMenuBarEs";
+import MobileNav from "/layout/mobile/MobileNavEs";
 import { usePathname } from "next/navigation";
 
 const Layout = ({ children }) => {
