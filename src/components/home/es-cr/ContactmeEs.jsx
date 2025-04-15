@@ -39,7 +39,7 @@ const ContactMe = () => {
   return (
     <div
       data-scroll-index="8"
-      id="contact"
+      id="contacto"
       className="py-5 xl:py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto"
     >
       <div className="px-5 py-8 bg-white dark:bg-nightBlack rounded-2xl contact-section lg:p-13">
