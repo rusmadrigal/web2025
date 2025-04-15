@@ -27,7 +27,8 @@
     "react-visibility-sensor": "^5.1.1",
     "sharp": "^0.34.1",
     "swiper": "^11.0.5",
-    "typewriter-effect": "^2.21.0"
+    "typewriter-effect": "^2.21.0",
+    "yet-another-react-lightbox": "^3.22.0"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^15.3.0",

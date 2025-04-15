@@ -26,6 +26,7 @@ export default async function Home() {
   return (
     <Layout>
       <Hero />
+      <Blog />
       <AboutMe />
       <Service />
       <Skills />

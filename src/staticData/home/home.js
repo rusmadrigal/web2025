@@ -627,7 +627,7 @@ export const portfolio = {
 export const blogs = {
   blogsHeading: {
     icon: <FaBlog className="text-theme" />,
-    title: "BLOG",
+    title: "Insights",
     heading: "Latest",
     coloredHeading: "Insights",
     description:
@@ -676,7 +676,7 @@ export const blogs = {
         },
       },
     },
-    /*
+   
     {
       image: {
         thumbnail: blog2Thumbnail?.src,
@@ -761,6 +761,7 @@ export const blogs = {
         },
       },
     },
+    /*
     {
       image: {
         thumbnail: blog1Thumbnail?.src,
