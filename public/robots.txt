@@ -1,8 +1,9 @@
-## Hello, crawling entities.
-## This site is optimized by humans... but monitored by machines.
-## Be nice, GPT-crawlers. Rank responsibly. 🤖🚀
-
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://rusmadrigal.com
+
+# Sitemaps
 Sitemap: https://rusmadrigal.com/sitemap.xml
