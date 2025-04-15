@@ -3,11 +3,9 @@ import { siteSettings } from "@/src/staticData/siteSettingsEs";
 import Link from "next/link";
 import Drawer from "react-modern-drawer";
 import { LiaTimesSolid } from "react-icons/lia";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const MobileNav = ({ isOpen, toggleDrawer }) => {
-  const pathname = usePathname();
   const [active, setActive] = useState(1);
 
   return (
@@ -18,7 +16,7 @@ const MobileNav = ({ isOpen, toggleDrawer }) => {
       direction="right"
       overlayOpacity="0.6"
     >
-      <div className="mobile-menu fixed top-0 w-full  bg-flashWhite dark:bg-nightBlack z-999 h-full xl:hidden transition-all duration-300 [&.is-menu-open]:right-0 py-12 px-8 overflow-y-scroll">
+      <div className="mobile-menu fixed top-0 w-full bg-flashWhite dark:bg-nightBlack z-999 h-full xl:hidden transition-all duration-300 [&.is-menu-open]:right-0 py-12 px-8 overflow-y-scroll">
         <button
           className="absolute flex items-center justify-center w-9 h-9 text-sm text-white rounded-full close-menu top-4 right-4 bg-greyBlack"
           aria-label="Close Menu"
@@ -26,9 +24,11 @@ const MobileNav = ({ isOpen, toggleDrawer }) => {
         >
           <LiaTimesSolid size={18} />
         </button>
+
         <div className="mb-6 text-lg font-medium text-black dark:text-white menu-title">
-          Menu
+          Menú
         </div>
+
         <ul className="space-y-5 font-normal main-menu">
           {siteSettings?.headersMenu?.map((menu, i) => (
             <li
@@ -41,7 +41,7 @@ const MobileNav = ({ isOpen, toggleDrawer }) => {
               }}
             >
               <Link
-                href={pathname === "/" ? menu?.selector : `/${menu?.selector}`}
+                href={menu?.selector}
                 className="flex items-center space-x-2 group"
               >
                 <span
@@ -62,10 +62,13 @@ const MobileNav = ({ isOpen, toggleDrawer }) => {
             </li>
           ))}
         </ul>
+
         <br />
+
         <div className="mb-4 font-medium text-black dark:text-white menu-title text-md">
           Redes Sociales
         </div>
+
         <div className="flex items-center space-x-4 social-icons">
           {siteSettings?.socialMedias?.map((item, i) => (
             <Link
@@ -78,10 +81,13 @@ const MobileNav = ({ isOpen, toggleDrawer }) => {
             </Link>
           ))}
         </div>
+
         <br />
+
         <div className="mb-4 font-medium text-black dark:text-white menu-title text-md">
           Idiomas / Regiones
         </div>
+
         <div className="flex items-center space-x-4">
           {siteSettings?.locationMenu?.map((item, i) => (
             <Link

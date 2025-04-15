@@ -28,7 +28,7 @@ export const siteSettings = {
     {
       id: 1,
       title: "Inicio",
-      selector: "#inicio", // Ruta relativa
+      selector: "/es-cr/#inicio", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <IoHomeOutline />,
       notVisibleRoutes: [],
@@ -36,7 +36,7 @@ export const siteSettings = {
     {
       id: 2,
       title: "Acerca",
-      selector: "#acerca", // Ruta relativa
+      selector: "/es-cr/#acerca", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <FaRegUser />,
       notVisibleRoutes: [],
@@ -44,7 +44,7 @@ export const siteSettings = {
     {
       id: 3,
       title: "Servicios",
-      selector: "#servicios", // Ruta relativa
+      selector: "/es-cr/#servicios", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <IoBriefcaseOutline />,
       notVisibleRoutes: [],
@@ -52,7 +52,7 @@ export const siteSettings = {
     {
       id: 4,
       title: "Skills",
-      selector: "#skill", // Ruta relativa
+      selector: "/es-cr/#skill", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <SlGraduation />,
       notVisibleRoutes: [],
@@ -60,7 +60,7 @@ export const siteSettings = {
     {
       id: 5,
       title: "CV",
-      selector: "#resume", // Ruta relativa
+      selector: "/es-cr/#resume", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <FaRegFileAlt />,
       notVisibleRoutes: [],
@@ -68,7 +68,7 @@ export const siteSettings = {
     {
       id: 8,
       title: "Opiniones",
-      selector: "#opiniones", // Ruta relativa
+      selector: "/es-cr/#opiniones", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <BiCommentDetail />,
       notVisibleRoutes: [],
@@ -76,7 +76,7 @@ export const siteSettings = {
     {
       id: 9,
       title: "Contacto",
-      selector: "#contacto", // Ruta relativa
+      selector: "/es-cr/#contacto", // Ruta relativa
       url: "/es-cr", // Ruta relativa
       Icon: <FaRegEnvelope />,
       notVisibleRoutes: [],
