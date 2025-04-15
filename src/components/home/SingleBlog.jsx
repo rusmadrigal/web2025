@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const SingleBlog = ({ blog }) => {
   return (
-    <Link href={`/blog/${blog?.slug}`}>
+    <Link href={`/insights/${blog.slug}`}>
       <div className="grid md:gap-2 grid-cols-12 overflow-hidden article group bg-flashWhite dark:bg-metalBlack items-center rounded-2xl p-3.5 mt-8">
         <div className="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
           <div className="block w-full overflow-hidden rounded-xl">
