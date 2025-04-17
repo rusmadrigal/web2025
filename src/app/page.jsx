@@ -15,7 +15,7 @@ export async function generateMetadata() {
   return {
     title: "Costa Rica SEO Consultant | 15+ Years of Results-Driven Strategies",
     description:
-      "Senior SEO professional with over 14 years of experience. Here, you can find my CV and examples of my previous work.",
+      "SEO Expert with 14+ Years of Experience — Check Out My CV and Project Samples Here!",
     alternates: {
       canonical: "https://rusmadrigal.com/",
     },
