@@ -11,7 +11,10 @@ export default async function InsightsPage() {
 
   return (
     <Layout>
-      <div className="py-3.5 max-w-content xl:max-2xl:max-w-6xl max-xl:mx-auto xl:ml-auto" id="insights">
+      <div
+        className="py-3.5 max-w-content xl:max-2xl:max-w-6xl max-xl:mx-auto xl:ml-auto"
+        id="insights"
+      >
         <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
           <div className="text-center mb-12">
             <h1 className="text-3xl xl:text-4xl font-bold text-black dark:text-white">
@@ -29,7 +32,7 @@ export default async function InsightsPage() {
               <Link
                 key={post.slug}
                 href={`/insights/${post.slug}`}
-                className="group rounded-2xl border border-platinum dark:border-greyBlack p-6 bg-white dark:bg-nightBlack hover:shadow-xl transition-all duration-200 flex flex-col justify-between h-full"
+                className="group w-full max-w-lg mx-auto rounded-3xl border border-platinum dark:border-greyBlack px-5 py-5 bg-white dark:bg-nightBlack hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full"
               >
                 <div>
                   {post.coverImage?.url && (
@@ -42,7 +45,9 @@ export default async function InsightsPage() {
                     </div>
                   )}
 
-                  <div className="text-xs text-theme uppercase tracking-wide mb-2">SEO</div>
+                  <div className="text-xs text-theme uppercase tracking-wide mb-2">
+                    SEO
+                  </div>
 
                   <h2 className="text-xl font-semibold text-black dark:text-white group-hover:text-theme transition mb-2">
                     {post.title}
@@ -65,4 +70,3 @@ export default async function InsightsPage() {
     </Layout>
   );
 }
-
