@@ -1,50 +1,68 @@
 export const dynamic = "force-dynamic"; // evita caché
 
 import { hygraph } from "@/src/lib/hygraph";
-import { GET_POST_BY_SLUG } from "@/src/lib/queries";
-import { RichText } from "@graphcms/rich-text-react-renderer";
-import Layout from "@/layout/Layout";
+import { GET_ALL_POSTS } from "@/src/lib/queries";
+import Layout from "../../../layout/Layout";
 import Footer from "@/src/components/shared/Footer";
+import Link from "next/link";
 
-export async function generateMetadata({ params }) {
-  const { blogPost } = await hygraph.request(GET_POST_BY_SLUG, {
-    slug: params.slug,
-  });
-  return {
-    title: blogPost.metaTitle,
-    description: blogPost.metaDescription,
-  };
-}
-
-export default async function BlogPostPage({ params }) {
-  const { blogPost } = await hygraph.request(GET_POST_BY_SLUG, {
-    slug: params.slug,
-  });
+export default async function InsightsPage() {
+  const { blogPosts } = await hygraph.request(GET_ALL_POSTS);
 
   return (
     <Layout>
-      <div className="py-12 px-6 max-w-content mx-auto">
-        <article className="prose dark:prose-invert max-w-none">
-          <h1>{blogPost.title}</h1>
-          {blogPost.coverImage?.url && (
-            <img
-              src={blogPost.coverImage.url}
-              alt={blogPost.title}
-              className="rounded-xl my-4"
-            />
-          )}
-          <p className="text-sm text-gray-500 mb-4">
-            {new Date(blogPost.date).toLocaleDateString()}
-          </p>
+      <div className="py-3.5 max-w-content xl:max-2xl:max-w-6xl max-xl:mx-auto xl:ml-auto" id="insights">
+        <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
+          <div className="text-center mb-12">
+            <h1 className="text-3xl xl:text-4xl font-bold text-black dark:text-white">
+              Latest SEO Insights
+            </h1>
+            <p className="text-regular text-black/80 dark:text-white/60 max-w-2xl mx-auto mt-4">
+              Explore real-world analyses and strategic breakdowns from projects
+              I've developed or studied — including technical SEO experiments,
+              penalties, AI content testing and algorithm recovery.
+            </p>
+          </div>
 
-          {blogPost.content?.raw ? (
-            <RichText content={blogPost.content.raw} />
-          ) : (
-            <p className="text-red-500">No content found in CMS.</p>
-          )}
-        </article>
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            {blogPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/insights/${post.slug}`}
+                className="group rounded-2xl border border-platinum dark:border-greyBlack p-6 bg-white dark:bg-nightBlack hover:shadow-xl transition-all duration-200 flex flex-col justify-between h-full"
+              >
+                <div>
+                  {post.coverImage?.url && (
+                    <div className="overflow-hidden rounded-xl mb-5">
+                      <img
+                        src={post.coverImage.url}
+                        alt={post.title}
+                        className="w-full h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  )}
+
+                  <div className="text-xs text-theme uppercase tracking-wide mb-2">SEO</div>
+
+                  <h2 className="text-xl font-semibold text-black dark:text-white group-hover:text-theme transition mb-2">
+                    {post.title}
+                  </h2>
+
+                  <p className="text-sm text-black/80 dark:text-white/60 line-clamp-3">
+                    {post.metaDescription}
+                  </p>
+                </div>
+
+                <div className="text-xs mt-4 text-gray-500 dark:text-gray-400">
+                  {new Date(post.date).toLocaleDateString()}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
       <Footer />
     </Layout>
   );
 }
+
