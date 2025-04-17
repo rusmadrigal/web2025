@@ -17,13 +17,12 @@ export default function NotFound() {
             href="/"
             className="inline-block px-6 py-3 bg-theme text-black font-semibold rounded-full hover:opacity-90 transition-all"
           >
-            Back to safety
+            Return home
           </Link>
           <div className="mt-8 text-sm text-gray-600 dark:text-gray-500">
             (Don’t worry — even Google gets lost sometimes.)
           </div>
         </div>
-
         <img
           src="/assets/img/404.png"
           alt="Oops, I'll tell dad to fix it!"
