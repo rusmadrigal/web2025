@@ -69,3 +69,5 @@ build/
 
 # Storybook
 storybook-static/
+
+.env.local

@@ -1,30 +1,52 @@
 import Image from "next/image";
 
 const BlogHero = ({ blog }) => {
+  const headingTitle =
+    blog?.blogInfo?.projectHeading?.title || "Blog Details";
+
+  const icon = blog?.blogInfo?.projectHeading?.icon || null;
+
+  const image =
+    blog?.coverImage?.url || blog?.image?.image || "/assets/img/blog/article1.png";
+
+  const infoList =
+    blog?.blogInfo?.projectInfo || [
+      { field: "Posted by", value: "Rus Madrigal" },
+      { field: "Date", value: blog?.date || "Unknown" },
+    ];
+
   return (
     <div>
-      <div className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-black dark:text-white border lg:px-5 section-name border-platinum dark:border-greyBlack200 rounded-4xl">
-        {blog?.blogInfo?.projectHeading?.icon}
-        {blog?.blogInfo?.projectHeading?.title}
+      {/* Etiqueta superior */}
+      <div className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-gray-300 border border-gray-700 rounded-4xl">
+        {icon}
+        {headingTitle}
       </div>
 
-      <h2 className="text-2xl font-semibold leading-normal text-black dark:text-white mt-7 lg:mt-10 article-title lg:text-3xl lg:leading-normal">
+      {/* Título del post */}
+      <h1 className="text-3xl font-bold text-theme mt-7 lg:mt-10 lg:text-4xl leading-snug tracking-tight">
         {blog?.title}
-      </h2>
-      <div className="mb-4 overflow-hidden mt-7 xl:my-8 thumb rounded-xl xl:rounded-2xl">
+      </h1>
+
+      {/* Imagen destacada */}
+      <div className="my-8 rounded-xl overflow-hidden">
         <Image
-          width={500}
+          width={800}
           height={500}
-          src={blog?.image?.image || "/assets/img/blog/article1.png"}
-          className="w-full"
+          src={image}
+          className="w-full object-cover rounded-xl"
           alt="Blog Thumbnail Image"
         />
       </div>
-      <div className="post-meta sm:flex items-center justify-between my-8 mb-10 max-sm:space-y-3.5">
-        {blog?.blogInfo?.projectInfo?.map((item, i) => (
+
+      {/* Meta información con color temático */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-6 text-sm border-t border-b border-gray-700 py-4">
+        {infoList.map((item, i) => (
           <div key={i}>
-            <h6 className="text-black dark:text-white">{item?.field}</h6>
-            <p className="text-regular">{item?.value}</p>
+            <h6 className="font-semibold text-theme uppercase tracking-wide text-xs">
+              {item?.field}
+            </h6>
+            <p className="text-gray-300">{item?.value}</p>
           </div>
         ))}
       </div>

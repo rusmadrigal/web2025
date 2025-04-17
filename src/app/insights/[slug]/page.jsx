@@ -1,59 +1,63 @@
-// src/app/blog/[slug]/page.jsx
 import { notFound } from "next/navigation";
+import { hygraph } from "@/src/lib/hygraph";
+import { GET_ALL_POST_SLUGS, GET_POST_BY_SLUG } from "@/src/lib/queries";
 import BlogHero from "@/src/components/blog/BlogHero";
 import BlogDescription from "@/src/components/blog/BlogDescription";
 import Footer from "@/src/components/shared/Footer";
 import Layout from "/layout/Layout";
-import { allBlogs } from "@/src/content/blogs/allBlogs";
 
-// ✅ Generación dinámica de metadata para cada post
+// ✅ Genera rutas estáticas en build
+export async function generateStaticParams() {
+  const { blogPosts } = await hygraph.request(GET_ALL_POST_SLUGS);
+  return blogPosts.map((post) => ({ slug: post.slug }));
+}
+
+// ✅ Metadata para SEO
 export async function generateMetadata({ params }) {
-  const blog = allBlogs.find((item) => item?.slug === params?.slug);
+  const { blogPost } = await hygraph.request(GET_POST_BY_SLUG, {
+    slug: params.slug,
+  });
 
-  if (!blog) return notFound();
-
-  const title = blog.title;
-  const description =
-    blog.metaDescription ||
-    blog.blogInfo?.projectDescription?.description?.slice(0, 160) ||
-    "";
-
-  const canonical = `https://rusmadrigal.com/blog/${blog.slug}`;
+  if (!blogPost) return notFound();
 
   return {
-    title,
-    description,
+    title: blogPost.metaTitle,
+    description: blogPost.metaDescription,
     alternates: {
-      canonical,
+      canonical: `https://rusmadrigal.com/insights/${blogPost.slug}`,
     },
     openGraph: {
-      title,
-      description,
-      url: canonical,
+      title: blogPost.metaTitle,
+      description: blogPost.metaDescription,
+      url: `https://rusmadrigal.com/insights/${blogPost.slug}`,
       type: "article",
-      images: blog?.image?.image ? [blog.image.image] : [],
+      images: blogPost.coverImage?.url ? [blogPost.coverImage.url] : [],
     },
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: blogPost.metaTitle,
+      description: blogPost.metaDescription,
     },
   };
 }
 
-// ✅ Componente del blog post
-export default function SingleBlog({ params }) {
-  const blog = allBlogs.find((project) => project?.slug === params?.slug);
+// ✅ Página principal del post
+export default async function SinglePostPage({ params }) {
+  const { blogPost } = await hygraph.request(GET_POST_BY_SLUG, {
+    slug: params.slug,
+  });
 
-  if (!blog) return notFound();
+  if (!blogPost) return notFound();
 
   return (
     <Layout>
-      <div className="py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto" id="blog">
+      <div
+        className="py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto"
+        id="blog"
+      >
         <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
-          <BlogHero blog={blog} />
-          <BlogDescription blog={blog} />
-          {/* <BlogComment blog={blog} /> */}
+          <BlogHero blog={blogPost} />
+          <BlogDescription blog={blogPost} />
         </div>
       </div>
       <Footer />

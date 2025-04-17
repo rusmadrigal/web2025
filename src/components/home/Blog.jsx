@@ -1,21 +1,17 @@
-"use client";
-
-import { useState } from "react";
+import { hygraph } from "@/src/lib/hygraph";
+import { GET_ALL_POSTS } from "@/src/lib/queries";
 import Button from "../ui/Button";
 import SectionHeading from "../shared/SectionHeading";
 import SingleBlog from "./SingleBlog";
-import { allBlogs } from "@/src/content/blogs/allBlogs";
 
-const Blog = () => {
-  const [showMore, setShowMore] = useState(3);
+export default async function Blog() {
+  const { blogPosts } = await hygraph.request(GET_ALL_POSTS);
 
-  // 🔍 Filtrar artículos válidos
-  const validBlogs = allBlogs.filter(
+  const validBlogs = blogPosts.filter(
     (blog) =>
       blog?.slug &&
       blog?.title &&
-      blog?.image?.thumbnail &&
-      blog?.category &&
+      blog?.coverImage?.url &&
       blog?.date
   );
 
@@ -34,19 +30,17 @@ const Blog = () => {
         />
 
         <div className="blog-list md:space-y-7.5 space-y-5">
-          {validBlogs.slice(0, showMore).map((blog, i) => (
+          {validBlogs.slice(0, 3).map((blog, i) => (
             <SingleBlog key={i} blog={blog} />
           ))}
         </div>
 
-        {showMore < validBlogs.length && (
+        {validBlogs.length > 3 && (
           <div className="mt-10 text-center more-blogs md:mt-13">
-            <Button text="More Post" onClick={() => setShowMore(validBlogs.length)} />
+            <Button text="More Post" href="/insights" />
           </div>
         )}
       </div>
     </div>
   );
-};
-
-export default Blog;
+}
