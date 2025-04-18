@@ -10,7 +10,7 @@ export const metadata = {
   openGraph: {
     title: "Actionable SEO Insights & Experiments | Rus Madrigal",
     description:
-      "Explore real-world SEO strategies, algorithm experiments, and actionable insights.",
+      "Explore real-world SEO strategies, algorithm experiments, and actionable insights curated by Rus Madrigal.",
     url: "https://rusmadrigal.com/insights",
     type: "website",
   },
@@ -18,7 +18,7 @@ export const metadata = {
     card: "summary",
     title: "Actionable SEO Insights & Experiments | Rus Madrigal",
     description:
-      "Explore real-world SEO strategies, algorithm experiments, and actionable insights.",
+      "Explore real-world SEO strategies, algorithm experiments, and actionable insights curated by Rus Madrigal.",
   },
 };
 
