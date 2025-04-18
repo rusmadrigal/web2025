@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic"; // evita caché
 
 export const metadata = {
-  title: "Actionable SEO Insights & Experiments | Rus Madrigal",
+  title: "Explore real-world SEO strategies, algorithm experiments, and actionable insights curated by Rus Madrigal.",
   description:
     "Explore real-world SEO strategies, algorithm experiments, and actionable.",
   alternates: {
