@@ -1,6 +1,6 @@
 import logo from "@/public/assets/img/site-logo.svg";
+import { HiOutlineChartBar } from "react-icons/hi";
 import { IoHomeOutline } from "react-icons/io5";
-import { CiUser } from "react-icons/ci";
 import { IoBriefcaseOutline } from "react-icons/io5";
 import { SlGraduation } from "react-icons/sl";
 import {
@@ -35,10 +35,10 @@ export const siteSettings = {
     },
     {
       id: 2,
-      title: "About",
-      selector: "#about", // Ruta relativa
+      title: "Insights",
+      selector: "/insights", // Ruta relativa
       url: "/", // Ruta relativa
-      Icon: <FaRegUser />,
+      Icon: <HiOutlineChartBar />,
       notVisibleRoutes: [],
     },
     {
