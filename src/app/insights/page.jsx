@@ -45,7 +45,7 @@ export default async function InsightsPage() {
             <p className="text-regular text-black/80 dark:text-white/60 max-w-2xl mx-auto mt-4">
               Explore real-world analyses and strategic breakdowns from projects
               I've developed or studied — including technical SEO experiments,
-              penalties, AI content testing and algorithm recovery.
+              penalties, AI content testing and algorithm recovery..
             </p>
           </div>
 
