@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
-import { hygraph } from "@/src/lib/hygraph";
-import { GET_ALL_POST_SLUGS, GET_POST_BY_SLUG } from "@/src/lib/queries";
+import { sanity } from "@/src/lib/sanity";
 import BlogHero from "@/src/components/blog/BlogHero";
 import BlogDescription from "@/src/components/blog/BlogDescription";
 import Footer from "@/src/components/shared/Footer";
@@ -8,46 +7,40 @@ import Layout from "/layout/Layout";
 
 // ✅ Genera rutas estáticas en build
 export async function generateStaticParams() {
-  const { blogPosts } = await hygraph.request(GET_ALL_POST_SLUGS);
-  return blogPosts.map((post) => ({ slug: post.slug }));
+  const slugs = await sanity.fetch(`*[_type == "blogPost"]{ "slug": slug.current }`);
+  return slugs.map((post) => ({ slug: post.slug }));
 }
 
 // ✅ Metadata para SEO
 export async function generateMetadata({ params }) {
-  const { blogPost } = await hygraph.request(GET_POST_BY_SLUG, {
-    slug: params.slug,
-  });
-
-  if (!blogPost) return notFound();
+  const post = await getPost(params.slug);
+  if (!post) return notFound();
 
   return {
-    title: blogPost.metaTitle,
-    description: blogPost.metaDescription,
+    title: post.metaTitle || post.title,
+    description: post.metaDescription || post.excerpt,
     alternates: {
-      canonical: `https://rusmadrigal.com/insights/${blogPost.slug}`,
+      canonical: `https://rusmadrigal.com/insights/${post.slug}`,
     },
     openGraph: {
-      title: blogPost.metaTitle,
-      description: blogPost.metaDescription,
-      url: `https://rusmadrigal.com/insights/${blogPost.slug}`,
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
+      url: `https://rusmadrigal.com/insights/${post.slug}`,
       type: "article",
-      images: blogPost.coverImage?.url ? [blogPost.coverImage.url] : [],
+      images: post.coverImage ? [post.coverImage] : [],
     },
     twitter: {
       card: "summary_large_image",
-      title: blogPost.metaTitle,
-      description: blogPost.metaDescription,
+      title: post.metaTitle || post.title,
+      description: post.metaDescription || post.excerpt,
     },
   };
 }
 
 // ✅ Página principal del post
 export default async function SinglePostPage({ params }) {
-  const { blogPost } = await hygraph.request(GET_POST_BY_SLUG, {
-    slug: params.slug,
-  });
-
-  if (!blogPost) return notFound();
+  const post = await getPost(params.slug);
+  if (!post) return notFound();
 
   return (
     <Layout>
@@ -56,11 +49,31 @@ export default async function SinglePostPage({ params }) {
         id="blog"
       >
         <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
-          <BlogHero blog={blogPost} />
-          <BlogDescription blog={blogPost} />
+          <BlogHero blog={post} />
+          <BlogDescription blog={post} />
         </div>
       </div>
       <Footer />
     </Layout>
+  );
+}
+
+// ✅ Fetch individual post desde Sanity
+async function getPost(slug) {
+  return sanity.fetch(
+    `*[_type == "blogPost" && slug.current == $slug][0]{
+      title,
+      slug,
+      metaTitle,
+      metaDescription,
+      excerpt,
+      date,
+      "coverImage": coverImage.asset->url,
+      content,
+      "author": author->name,
+      "authorImage": author->image.asset->url,
+      "categories": categories[]->title
+    }`,
+    { slug }
   );
 }

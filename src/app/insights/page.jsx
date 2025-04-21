@@ -22,14 +22,24 @@ export const metadata = {
   },
 };
 
-import { hygraph } from "@/src/lib/hygraph";
-import { GET_ALL_POSTS } from "@/src/lib/queries";
+import { sanity } from "@/lib/sanity";
 import Layout from "../../../layout/Layout";
 import Footer from "@/src/components/shared/Footer";
 import Link from "next/link";
 
+// ✅ Consulta Sanity directamente para obtener todos los posts
+async function getAllPosts() {
+  return sanity.fetch(`*[_type == "blogPost"] | order(date desc) {
+    title,
+    "slug": slug.current,
+    metaDescription,
+    date,
+    "coverImage": coverImage.asset->url
+  }`);
+}
+
 export default async function InsightsPage() {
-  const { blogPosts } = await hygraph.request(GET_ALL_POSTS);
+  const blogPosts = await getAllPosts();
 
   return (
     <Layout>
@@ -57,10 +67,10 @@ export default async function InsightsPage() {
                 className="group w-full max-w-lg mx-auto rounded-3xl border border-platinum dark:border-greyBlack px-5 py-5 bg-white dark:bg-nightBlack hover:shadow-2xl transition-all duration-300 flex flex-col justify-between h-full"
               >
                 <div>
-                  {post.coverImage?.url && (
+                  {post.coverImage && (
                     <div className="overflow-hidden rounded-xl mb-5">
                       <img
-                        src={post.coverImage.url}
+                        src={post.coverImage}
                         alt={post.title}
                         className="w-full h-56 object-cover rounded-xl group-hover:scale-105 transition-transform duration-300"
                       />

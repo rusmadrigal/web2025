@@ -1,17 +1,25 @@
-import { hygraph } from "@/src/lib/hygraph";
-import { GET_ALL_POSTS } from "@/src/lib/queries";
+import { sanity } from "@/src/lib/sanity";
 import Button from "../ui/Button";
 import SectionHeading from "../shared/SectionHeading";
 import SingleBlog from "./SingleBlog";
 
 export default async function Blog() {
-  const { blogPosts } = await hygraph.request(GET_ALL_POSTS);
+  // 🔄 Traer los últimos 3 posts ordenados por fecha
+  const blogPosts = await sanity.fetch(`*[_type == "blogPost"] | order(date desc)[0...3]{
+    title,
+    "slug": slug.current,
+    excerpt,
+    date,
+    metaDescription,
+    "coverImage": coverImage.asset->url
+  }`);
 
+  // ✅ Validar que tengan datos clave
   const validBlogs = blogPosts.filter(
     (blog) =>
       blog?.slug &&
       blog?.title &&
-      blog?.coverImage?.url &&
+      blog?.coverImage &&
       blog?.date
   );
 
@@ -30,14 +38,14 @@ export default async function Blog() {
         />
 
         <div className="blog-list md:space-y-7.5 space-y-5">
-          {validBlogs.slice(0, 3).map((blog, i) => (
+          {validBlogs.map((blog, i) => (
             <SingleBlog key={i} blog={blog} />
           ))}
         </div>
 
         {validBlogs.length > 3 && (
           <div className="mt-10 text-center more-blogs md:mt-13">
-            <Button text="More Post" href="/insights" />
+            <Button text="More Posts" href="/insights" />
           </div>
         )}
       </div>

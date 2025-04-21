@@ -11,7 +11,7 @@ const SingleBlog = ({ blog }) => {
         <div className="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
           <div className="block w-full overflow-hidden rounded-xl">
             <Image
-              src={coverImage?.url || "/fallback.jpg"}
+              src={coverImage || "/fallback.jpg"}
               alt={title || "Blog post"}
               width={300}
               height={250}
@@ -23,7 +23,9 @@ const SingleBlog = ({ blog }) => {
         {/* Contenido del blog */}
         <div className="relative flex flex-col col-span-12 px-3 pt-6 pb-2 md:p-5 post-content sm:col-span-6 md:col-span-7">
           <div className="flex items-center gap-5 text-sm font-medium tags">
-            <span className="transition-colors hover:text-theme">{date}</span>
+            <span className="transition-colors hover:text-theme">
+              {new Date(date).toLocaleDateString()}
+            </span>
           </div>
 
           <div className="post-title mt-3 md:mt-4.5 mb-4 md:mb-6">

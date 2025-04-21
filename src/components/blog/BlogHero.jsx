@@ -1,26 +1,26 @@
 import Image from "next/image";
 
 const BlogHero = ({ blog }) => {
-  const headingTitle =
-    blog?.blogInfo?.projectHeading?.title || "Blog Details";
+  const headingTitle = "SEO Insights";
 
-  const icon = blog?.blogInfo?.projectHeading?.icon || null;
+  const image = blog?.coverImage || "/assets/img/blog/article1.png";
 
-  const image =
-    blog?.coverImage?.url || blog?.image?.image || "/assets/img/blog/article1.png";
-
-  const infoList =
-    blog?.blogInfo?.projectInfo || [
-      { field: "Posted by", value: "Rus Madrigal" },
-      { field: "Date", value: blog?.date || "Unknown" },
-    ];
+  const infoList = [
+    { field: "Posted by", value: blog?.author || "Unknown" },
+    { field: "Date", value: new Date(blog?.date).toLocaleDateString() },
+    {
+      field: "Categories",
+      value: blog?.categories?.length
+        ? blog.categories.join(", ")
+        : "Uncategorized",
+    },
+  ];
 
   return (
     <div>
       {/* Etiqueta superior */}
       <div className="inline-flex items-center gap-2 px-4 py-2 text-xs tracking-wide text-gray-300 border border-gray-700 rounded-4xl">
-        {icon}
-        {headingTitle}
+        🧠 {headingTitle}
       </div>
 
       {/* Título del post */}

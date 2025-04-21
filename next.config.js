@@ -11,7 +11,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "us-west-2.graphassets.com",
+        hostname: "us-west-2.graphassets.com", // Hygraph
+      },
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io", // ✅ Sanity
       },
     ],
   },

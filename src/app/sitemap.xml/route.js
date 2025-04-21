@@ -1,9 +1,12 @@
-import { hygraph } from "@/src/lib/hygraph";
-import { GET_ALL_POST_SLUGS } from "@/src/lib/queries";
+import { sanity } from "@/lib/sanity";
 
 export async function GET() {
-  const baseUrl = "https://rusmadrigal.com"; // Cambiá si usás dominio distinto
-  const { blogPosts } = await hygraph.request(GET_ALL_POST_SLUGS);
+  const baseUrl = "https://rusmadrigal.com";
+
+  // 🔹 Obtener los slugs directamente de Sanity
+  const blogPosts = await sanity.fetch(`*[_type == "blogPost" && defined(slug.current)]{
+    "slug": slug.current
+  }`);
 
   const dynamicUrls = blogPosts.map((post) => {
     return `
@@ -15,12 +18,7 @@ export async function GET() {
     `;
   });
 
-  const staticUrls = [
-    "",
-    "insights",
-    "about",
-    "contact",
-  ].map(
+  const staticUrls = ["", "insights", "about", "contact"].map(
     (path) => `
     <url>
       <loc>${baseUrl}/${path}</loc>
