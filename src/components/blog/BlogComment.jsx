@@ -113,7 +113,7 @@ const BlogComment = () => {
                       className="px-4 py-2 text-sm font-light text-black dark:text-white border rounded-md border-platinum dark:border-greyBlack dark:hover:bg-greyBlack"
                       aria-label="Cancel"
                     >
-                      Cancel
+                      Cancel.
                     </button>
                     <button
                       type="submit"
