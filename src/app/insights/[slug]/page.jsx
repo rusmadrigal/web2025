@@ -13,19 +13,20 @@ export async function generateStaticParams() {
 
 // ✅ Metadata para SEO
 export async function generateMetadata({ params }) {
-  const post = await getPost(params.slug);
+  const slug = params?.slug; // 👈 Asegura que sea string
+  const post = await getPost(slug);
   if (!post) return notFound();
 
   return {
     title: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt,
     alternates: {
-      canonical: `https://rusmadrigal.com/insights/${post.slug}`,
+      canonical: `https://rusmadrigal.com/insights/${slug}`, // 👈 Usa el slug directamente
     },
     openGraph: {
       title: post.metaTitle || post.title,
       description: post.metaDescription || post.excerpt,
-      url: `https://rusmadrigal.com/insights/${post.slug}`,
+      url: `https://rusmadrigal.com/insights/${slug}`,
       type: "article",
       images: post.coverImage ? [post.coverImage] : [],
     },
@@ -39,7 +40,8 @@ export async function generateMetadata({ params }) {
 
 // ✅ Página principal del post
 export default async function SinglePostPage({ params }) {
-  const post = await getPost(params.slug);
+  const slug = params?.slug; // 👈 Igual aquí
+  const post = await getPost(slug);
   if (!post) return notFound();
 
   return (
