@@ -5,8 +5,8 @@ import BlogDescription from "@/src/components/blog/BlogDescription";
 import Footer from "@/src/components/shared/Footer";
 import Layout from "/layout/Layout";
 
-// 👇 Habilita ISR: actualiza cada 60 segundos
-export const revalidate = 60;
+// 👇 Habilita ISR: actualiza cada 10 segundos
+export const revalidate = 600; // 10 minutos
 
 // ✅ Genera rutas estáticas en build
 export async function generateStaticParams() {
