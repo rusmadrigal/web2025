@@ -5,6 +5,9 @@ import BlogDescription from "@/src/components/blog/BlogDescription";
 import Footer from "@/src/components/shared/Footer";
 import Layout from "/layout/Layout";
 
+// 👇 Habilita ISR: actualiza cada 60 segundos
+export const revalidate = 60;
+
 // ✅ Genera rutas estáticas en build
 export async function generateStaticParams() {
   const slugs = await sanity.fetch(`*[_type == "blogPost"]{ "slug": slug.current }`);
@@ -13,7 +16,7 @@ export async function generateStaticParams() {
 
 // ✅ Metadata para SEO
 export async function generateMetadata({ params }) {
-  const slug = params?.slug; // 👈 Asegura que sea string
+  const slug = params?.slug;
   const post = await getPost(slug);
   if (!post) return notFound();
 
@@ -21,7 +24,7 @@ export async function generateMetadata({ params }) {
     title: post.metaTitle || post.title,
     description: post.metaDescription || post.excerpt,
     alternates: {
-      canonical: `https://rusmadrigal.com/insights/${slug}`, // 👈 Usa el slug directamente
+      canonical: `https://rusmadrigal.com/insights/${slug}`,
     },
     openGraph: {
       title: post.metaTitle || post.title,
@@ -40,7 +43,7 @@ export async function generateMetadata({ params }) {
 
 // ✅ Página principal del post
 export default async function SinglePostPage({ params }) {
-  const slug = params?.slug; // 👈 Igual aquí
+  const slug = params?.slug;
   const post = await getPost(slug);
   if (!post) return notFound();
 
