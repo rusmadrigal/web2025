@@ -9,9 +9,10 @@ import { useState } from "react";
 const BlogDescription = ({ blog }) => {
   const content = blog?.content;
 
-  const images = blog?.projectDescription?.projectImage?.map((img) =>
-    typeof img === "string" ? { src: img } : { src: img?.url }
-  ) || [];
+  const images =
+    blog?.projectDescription?.projectImage?.map((img) =>
+      typeof img === "string" ? { src: img } : { src: img?.url }
+    ) || [];
 
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,7 +21,7 @@ const BlogDescription = ({ blog }) => {
     <div className="space-y-12 text-gray-300">
       {/* ✅ Contenido del post */}
       {content && (
-        <div className="text-gray-200 text-lg leading-relaxed space-y-6">
+        <div className="mt-10 text-gray-200 text-lg leading-relaxed space-y-6">
           <PortableText
             value={content}
             components={{
@@ -54,30 +55,6 @@ const BlogDescription = ({ blog }) => {
               },
             }}
           />
-        </div>
-      )}
-
-      {/* 🖼 Imágenes del lightbox */}
-      {images.length > 0 && (
-        <div className="grid gap-6 sm:grid-cols-2 md:gap-8">
-          {images.map((img, i) => (
-            <div
-              key={i}
-              className="overflow-hidden rounded-xl cursor-zoom-in"
-              onClick={() => {
-                setActiveIndex(i);
-                setIsOpen(true);
-              }}
-            >
-              <Image
-                width={300}
-                height={300}
-                src={img.src}
-                className="w-full object-cover rounded-xl"
-                alt={`Blog image ${i + 1}`}
-              />
-            </div>
-          ))}
         </div>
       )}
 
