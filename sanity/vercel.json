@@ -4,5 +4,5 @@
       "NPM_FLAGS": "--legacy-peer-deps"
     }
   },
-  "ignoreCommand": "git diff --quiet HEAD^ HEAD -- ."
+  "ignoreCommand": "! git diff --name-only HEAD^ HEAD | grep -qv '^rusweb/sanity/'"
 }
