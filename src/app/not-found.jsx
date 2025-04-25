@@ -20,7 +20,7 @@ export default function NotFound() {
             Return home
           </Link>
           <div className="mt-8 text-sm text-gray-600 dark:text-gray-500">
-            (Don’t worry — even Google gets lost sometimes.)
+            (Don’t worry — even Google gets lost sometimes...)
           </div>
         </div>
         <img
