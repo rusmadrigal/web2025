@@ -11,7 +11,7 @@ export default function NotFound() {
           </h2>
           <p className="text-lg text-gray-400 max-w-xl mb-8">
             The page you’re looking for either doesn’t exist or took a break to
-            optimize its meta tags.
+            optimize its meta tags...
           </p>
           <Link
             href="/"
