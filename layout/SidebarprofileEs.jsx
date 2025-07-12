@@ -24,7 +24,7 @@ const SidebarProfile = () => {
       <div className="p-3 max-xl:mb-3 overflow-hidden minfo__sidebar bg-white dark:bg-nightBlack rounded-2xl">
         <div className="mx-4 mt-12 text-center user-info lg:mx-6">
           <Link
-            href="/"
+            href="/es-cr"
             className="mb-2.5 h-36 w-36 block mx-auto border-6 border-platinum dark:border-[#2f2f2f] overflow-hidden rounded-full"
           >
             <Image

@@ -1,18 +1,29 @@
 import Image from "next/image";
 
-const BlogHero = ({ blog }) => {
-  const headingTitle = "SEO Insights";
+const BlogHero = ({ blog, lang = "en" }) => {
+  const headingTitle = lang === "es" ? "Reflexiones SEO" : "SEO Insights";
 
   const image = blog?.coverImage || "/assets/img/blog/article1.png";
 
   const infoList = [
-    { field: "Posted by", value: blog?.author || "Unknown" },
-    { field: "Date", value: new Date(blog?.date).toLocaleDateString() },
     {
-      field: "Categories",
-      value: blog?.categories?.length
-        ? blog.categories.join(", ")
-        : "Uncategorized",
+      field: lang === "es" ? "Publicado por" : "Posted by",
+      value: blog?.author || (lang === "es" ? "Desconocido" : "Unknown"),
+    },
+    {
+      field: lang === "es" ? "Fecha" : "Date",
+      value: new Date(blog?.date).toLocaleDateString(
+        lang === "es" ? "es-CR" : "en-US"
+      ),
+    },
+    {
+      field: lang === "es" ? "Categorías" : "Categories",
+      value:
+        blog?.categories?.length > 0
+          ? blog.categories.join(", ")
+          : lang === "es"
+          ? "Sin categoría"
+          : "Uncategorized",
     },
   ];
 
@@ -39,7 +50,7 @@ const BlogHero = ({ blog }) => {
         />
       </div>
 
-      {/* Meta información con color temático */}
+      {/* Meta información */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mt-6 text-sm border-t border-b border-gray-700 py-4">
         {infoList.map((item, i) => (
           <div key={i}>

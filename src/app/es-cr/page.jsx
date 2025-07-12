@@ -1,5 +1,4 @@
 import AboutmeEs from "@/src/components/home/es-cr/AboutmeEs";
-import Blog from "@/src/components/home/Blog";
 import ContactmeEs from "@/src/components/home/es-cr/ContactmeEs";
 import HeroEs from "@/src/components/home/es-cr/HeroEs";
 import Portfolio from "@/src/components/home/Portfolio";
@@ -9,6 +8,8 @@ import SkillsES from "@/src/components/home/es-cr/SkillsEs";
 import TestimonialEs from "@/src/components/home/es-cr/TestimonialEs";
 import Footer from "@/src/components/shared/Footer";
 import Layout from "/layout/LayoutEs";
+import BlogCR from "@/src/components/home/es-cr/CRBlog";
+
 
 // ✅ Metadata para SEO versión en español
 export async function generateMetadata() {
@@ -26,6 +27,7 @@ export default async function Home() {
   return (
     <Layout>
       <HeroEs />
+      <BlogCR />
       <AboutmeEs />
       <ServiceEs />
       <SkillsES />

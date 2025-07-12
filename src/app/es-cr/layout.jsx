@@ -1,44 +1,71 @@
-import "../globals.css";
-import "react-modern-drawer/dist/index.css";
-import "swiper/css";
+"use client";
 
-import { Poppins } from "next/font/google";
-import dynamic from "next/dynamic";
+import { useEffect, useRef, useState } from "react";
+import AnimatedLine from "/src/components/ui/AnimatedLine";
+import useMediaQuery from "/src/hooks/useMediaQuery";
+import RightNav from "/layout/RightNav";
+import SidebarProfile from "/layout/SidebarProfile";
+import MobileMenuBar from "/layout/mobile/MobileMenuBar";
+import MobileNav from "/layout/mobile/MobileNav";
+import { usePathname } from "next/navigation";
 
-const CustomCursor = dynamic(
-  () => import("@/src/components/shared/CustomCursor"),
-  { ssr: false }
-);
+const Layout = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 1199px)");
+  const midContainer = useRef(null);
 
-const BackToTop = dynamic(() => import("@/src/components/shared/BackToTop"), {
-  ssr: false,
-});
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
 
-const poppins = Poppins({
-  weight: ["200", "300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  display: "swap",
-});
+  useEffect(() => {
+    if (!isMobile && isOpen) {
+      toggleDrawer();
+    }
+  }, [isMobile]);
 
-export const metadata = {
-  title: "Consultor SEO Costa Rica +14 años de experiencia | Rus Madrigal",
-  description:
-    "Profesional en SEO con más de 14 años de experiencia. Aquí podés ver mi CV y proyectos anteriores.",
-  alternates: {
-    canonical: "https://rusmadrigal.com/es-cr",
-  },
-  icons: {
-    icon: "/assets/img/favicon.ico",
-  },
+  useEffect(() => {
+    const scrollToSection = () => {
+      const hash = window.location.hash.substr(1);
+      const section = document.getElementById(hash);
+
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    scrollToSection();
+
+    const handleHashChange = () => {
+      scrollToSection();
+    };
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  return (
+    <div>
+      <div className="relative pt-10 minfo__app max-xl:pt-20">
+        <div className="max-lg:px-4">
+          <MobileMenuBar toggleDrawer={toggleDrawer} />
+          <MobileNav isOpen={isOpen} toggleDrawer={toggleDrawer} />
+          <SidebarProfile />
+          <RightNav midContainer={midContainer} />
+          <div
+            className="relative mx-auto minfo__contentBox max-w-container xl:max-2xl:max-w-65rem"
+            ref={midContainer}
+          >
+            {children}
+          </div>
+        </div>
+      </div>
+      <AnimatedLine />
+    </div>
+  );
 };
 
-export default function SpanishLayout({ children }) {
-  return (
-    <>
-      {children}
-      <CustomCursor />
-      <BackToTop />
-    </>
-  );
-}
+export default Layout;

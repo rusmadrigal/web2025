@@ -10,7 +10,9 @@ export const revalidate = 600; // 10 minutos
 
 // ✅ Genera rutas estáticas en build
 export async function generateStaticParams() {
-  const slugs = await sanity.fetch(`*[_type == "blogPost"]{ "slug": slug.current }`);
+  const slugs = await sanity.fetch(
+    `*[_type == "blogPost"]{ "slug": slug.current }`
+  );
   return slugs.map((post) => ({ slug: post.slug }));
 }
 
@@ -54,7 +56,7 @@ export default async function SinglePostPage({ params }) {
         id="blog"
       >
         <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
-          <BlogHero blog={post} />
+          <BlogHero blog={post} lang="en" />
           <BlogDescription blog={post} />
         </div>
       </div>

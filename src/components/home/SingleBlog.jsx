@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const SingleBlog = ({ blog }) => {
+const SingleBlog = ({ blog, lang = "en" }) => {
   const { slug, title, date, coverImage, metaDescription } = blog;
 
   return (
-    <Link href={`/insights/${slug}`}>
+    <Link href={`/${lang === "es" ? "es-cr/insights" : "insights"}/${slug}`}>
       <div className="grid md:gap-2 grid-cols-12 overflow-hidden article group bg-flashWhite dark:bg-metalBlack items-center rounded-2xl p-3.5 mt-8">
         {/* Imagen del blog */}
         <div className="flex col-span-12 overflow-hidden thumbnail sm:col-span-6 md:col-span-5">
@@ -24,7 +24,9 @@ const SingleBlog = ({ blog }) => {
         <div className="relative flex flex-col col-span-12 px-3 pt-6 pb-2 md:p-5 post-content sm:col-span-6 md:col-span-7">
           <div className="flex items-center gap-5 text-sm font-medium tags">
             <span className="transition-colors hover:text-theme">
-              {new Date(date).toLocaleDateString()}
+              {new Date(date).toLocaleDateString(
+                lang === "es" ? "es-CR" : "en-US"
+              )}
             </span>
           </div>
 
@@ -42,7 +44,7 @@ const SingleBlog = ({ blog }) => {
 
           <div className="read-details">
             <p className="inline-flex items-center gap-2 border border-theme text-theme text-sm py-3.5 px-6 rounded-3xl leading-none transition-all duration-300 hover:bg-themeHover hover:border-themeHover dark:font-medium hover:text-white">
-              Read More
+              {lang === "es" ? "Leer artículo" : "Read More"}
             </p>
           </div>
         </div>

@@ -5,22 +5,19 @@ import SingleBlog from "./SingleBlog";
 
 export default async function Blog() {
   // 🔄 Traer los últimos 3 posts ordenados por fecha
-  const blogPosts = await sanity.fetch(`*[_type == "blogPost"] | order(date desc)[0...3]{
-    title,
-    "slug": slug.current,
-    excerpt,
-    date,
-    metaDescription,
-    "coverImage": coverImage.asset->url
-  }`);
+  const blogPosts =
+    await sanity.fetch(`*[_type == "blogPost" && language == "en"] | order(date desc)[0...3]{
+  title,
+  "slug": slug.current,
+  excerpt,
+  date,
+  metaDescription,
+  "coverImage": coverImage.asset->url
+}`);
 
   // ✅ Validar que tengan datos clave
   const validBlogs = blogPosts.filter(
-    (blog) =>
-      blog?.slug &&
-      blog?.title &&
-      blog?.coverImage &&
-      blog?.date
+    (blog) => blog?.slug && blog?.title && blog?.coverImage && blog?.date
   );
 
   return (
