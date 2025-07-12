@@ -926,7 +926,7 @@ export const contactInfo = {
     },
     {
       id: 2,
-      field: "E-mail",
+      field: "Correo",
       data: "seo@rusmadrigal.com",
       Icon: <EmailIcon />,
     },
