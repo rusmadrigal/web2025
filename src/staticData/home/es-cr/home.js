@@ -211,7 +211,7 @@ export const userDetails = [
   },
   {
     field: "Email",
-    value: "rusbenmadrigal@gmail.com",
+    value: "seo@rusmadrigal.com",
   },
   {
     field: "GitHub",
@@ -926,7 +926,7 @@ export const contactInfo = {
     {
       id: 2,
       field: "E-mail",
-      data: "rusbenmadrigal@gmail.com",
+      data: "seo@rusmadrigal.com",
       Icon: <EmailIcon />,
     },
     {
