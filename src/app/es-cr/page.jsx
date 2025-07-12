@@ -15,7 +15,7 @@ export async function generateMetadata() {
   return {
     title: "Consultor SEO Costa Rica +14 años de experiencia | Rus Madrigal",
     description:
-      "Profesional SEO con más de 14 años de experiencia. Aquí puedes encontrar mi CV y ejemplos de mi trabajo previo.",
+      "Consultor SEO en Costa Rica especializado en posicionamiento web, auditorías técnicas y estrategias personalizadas para aumentar tu visibilidad en Google.",
     alternates: {
       canonical: "https://rusmadrigal.com/es-cr",
     },
