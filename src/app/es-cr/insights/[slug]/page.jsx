@@ -55,7 +55,7 @@ export default async function SinglePostPage({ params }) {
         id="blog"
       >
         <div className="px-5 py-8 md:p-8 bg-white dark:bg-nightBlack rounded-2xl lg:p-10 2xl:p-13">
-          <BlogHero blog={post} lang="es" />
+          <BlogHero blog={post} lang="es-CR" />
           <BlogDescription blog={post} />
         </div>
       </div>
