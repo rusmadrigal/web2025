@@ -1,3 +1,5 @@
+// app/es-cr/insights/page.jsx
+
 export const dynamic = "force-dynamic"; // evita caché
 
 export const metadata = {
@@ -23,9 +25,9 @@ export const metadata = {
 };
 
 import { sanity } from "@/lib/sanity";
-import Layout from "../layout";
 import Footer from "@/src/components/shared/Footer";
 import Link from "next/link";
+import VisualLayoutEsCR from "../VisualLayoutEsCR";
 
 // ✅ Consulta solo posts en español
 async function getAllPostsES() {
@@ -42,7 +44,7 @@ export default async function InsightsPageES() {
   const blogPosts = await getAllPostsES();
 
   return (
-    <Layout>
+    <VisualLayoutEsCR>
       <div
         className="py-3.5 max-w-content xl:max-2xl:max-w-6xl max-xl:mx-auto xl:ml-auto"
         id="insights"
@@ -98,6 +100,6 @@ export default async function InsightsPageES() {
         </div>
       </div>
       <Footer />
-    </Layout>
+    </VisualLayoutEsCR>
   );
 }

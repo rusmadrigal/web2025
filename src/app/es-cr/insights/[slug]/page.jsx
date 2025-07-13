@@ -3,7 +3,7 @@ import { sanity } from "@/src/lib/sanity";
 import BlogHero from "@/src/components/blog/BlogHero";
 import BlogDescription from "@/src/components/blog/BlogDescription";
 import Footer from "@/src/components/shared/Footer";
-import Layout from "/layout/Layout";
+import VisualLayoutEsCR from "@/src/app/es-cr/VisualLayoutEsCR";
 
 // ISR: refresca cada 10 min
 export const revalidate = 600;
@@ -49,7 +49,7 @@ export default async function SinglePostPage({ params }) {
   if (!post) return notFound();
 
   return (
-    <Layout>
+    <VisualLayoutEsCR>
       <div
         className="py-3.5 max-w-content xl:max-2xl:max-w-50rem max-xl:mx-auto xl:ml-auto"
         id="blog"
@@ -60,7 +60,7 @@ export default async function SinglePostPage({ params }) {
         </div>
       </div>
       <Footer />
-    </Layout>
+    </VisualLayoutEsCR>
   );
 }
 
