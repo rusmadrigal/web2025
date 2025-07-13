@@ -1,29 +1,29 @@
 import Image from "next/image";
 
 const BlogHero = ({ blog, lang = "en" }) => {
-  const headingTitle = lang === "es" ? "Reflexiones SEO" : "SEO Insights";
+  const isES = lang.startsWith("es"); // Detecta "es", "es-CR", "es-MX", etc.
+
+  const headingTitle = isES ? "Reflexiones SEO" : "SEO Insights";
 
   const image = blog?.coverImage || "/assets/img/blog/article1.png";
 
   const infoList = [
     {
-      field: lang === "es" ? "Publicado por" : "Posted by",
-      value: blog?.author || (lang === "es" ? "Desconocido" : "Unknown"),
+      field: isES ? "Publicado por" : "Posted by",
+      value: blog?.author || (isES ? "Desconocido" : "Unknown"),
     },
     {
-      field: lang === "es" ? "Fecha" : "Date",
-      value: new Date(blog?.date).toLocaleDateString(
-        lang === "es" ? "es-CR" : "en-US"
-      ),
+      field: isES ? "Fecha" : "Date",
+      value: new Date(blog?.date).toLocaleDateString(isES ? "es-CR" : "en-US"),
     },
     {
-      field: lang === "es" ? "Categorías" : "Categories",
+      field: isES ? "Categorías" : "Categories",
       value:
         blog?.categories?.length > 0
           ? blog.categories.join(", ")
-          : lang === "es"
-          ? "Sin categoría"
-          : "Uncategorized",
+          : isES
+            ? "Sin categoría"
+            : "Uncategorized",
     },
   ];
 
