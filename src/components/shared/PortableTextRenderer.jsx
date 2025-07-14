@@ -48,6 +48,57 @@ export const PortableTextRenderer = ({ value, lang = "es" }) => {
         </div>
       ),
     },
+    block: {
+      h1: ({ children }) => (
+        <h1 className="text-3xl font-bold mt-8 mb-4 text-theme">{children}</h1>
+      ),
+      h2: ({ children }) => (
+        <h2 className="text-2xl font-semibold mt-6 mb-3 text-theme">
+          {children}
+        </h2>
+      ),
+      h3: ({ children }) => (
+        <h3 className="text-xl font-semibold mt-5 mb-2 text-theme">
+          {children}
+        </h3>
+      ),
+      h4: ({ children }) => (
+        <h4 className="text-lg font-semibold mt-4 mb-2 text-theme">
+          {children}
+        </h4>
+      ),
+      normal: ({ children }) => (
+        <p className="text-base leading-relaxed my-4 text-gray-200">
+          {children}
+        </p>
+      ),
+    },
+    list: {
+      bullet: ({ children }) => (
+        <ul className="list-disc pl-5 space-y-2 text-gray-200">{children}</ul>
+      ),
+      number: ({ children }) => (
+        <ol className="list-decimal pl-5 space-y-2 text-gray-200">
+          {children}
+        </ol>
+      ),
+    },
+    listItem: {
+      bullet: ({ children }) => <li className="ml-2">{children}</li>,
+      number: ({ children }) => <li className="ml-2">{children}</li>,
+    },
+    marks: {
+      link: ({ children, value }) => (
+        <a
+          href={value?.href}
+          className="text-blue-500 underline hover:text-blue-400"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {children}
+        </a>
+      ),
+    },
   };
 
   return <PortableText value={value} components={components} />;
