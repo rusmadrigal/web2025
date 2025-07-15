@@ -8,6 +8,7 @@ import TestimonialEs from "@/src/components/home/es-cr/TestimonialEs";
 import ContactmeEs from "@/src/components/home/es-cr/ContactmeEs";
 import Footer from "@/src/components/shared/Footer";
 import dynamic from "next/dynamic";
+import YoutubeVideosCR from "@/src/components/home/es-cr/YoutubeVideosCR";
 
 const VisualLayoutEsCR = dynamic(() => import("./VisualLayoutEsCR"), {
   ssr: false,
@@ -29,6 +30,7 @@ export default function HomeEsCR() {
     <VisualLayoutEsCR>
       <HeroEs />
       <BlogCR />
+      <YoutubeVideosCR />
       <AboutmeEs />
       <ServiceEs />
       <SkillsES />

@@ -10,6 +10,8 @@ const Button = ({
   type = "button",
   suffix = "",
   prefix = "",
+  href, // ← Nuevo
+  target = "_self", // ← Nuevo
 }) => {
   const handleClick = () => {
     if (onClick) {
@@ -18,6 +20,24 @@ const Button = ({
       console.log("Button clicked from component!");
     }
   };
+
+  // Si hay href, renderizamos un <a>
+  if (href) {
+    return (
+      <a
+        href={href}
+        target={target}
+        rel={target === "_blank" ? "noopener noreferrer" : undefined}
+        className={btnClassName}
+      >
+        {prefix && prefix}
+        {text}
+        {suffix && suffix}
+      </a>
+    );
+  }
+
+  // Si no hay href, renderizamos un <button>
   return (
     <button className={btnClassName} onClick={handleClick} type={type}>
       {prefix && prefix}
