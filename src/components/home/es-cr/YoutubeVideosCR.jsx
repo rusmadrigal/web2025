@@ -30,10 +30,10 @@ export default async function YoutubeVideosCR() {
 
         <div className="mt-10 text-center more-videos md:mt-13">
           <Button
-  text="Ver canal completo"
-  href="https://www.youtube.com/@rusmadrigal"
-  target="_blank"
-/>
+            text="Visitar canal"
+            href="https://www.youtube.com/@rusmadrigal"
+            target="_blank"
+          />
         </div>
       </div>
     </div>
