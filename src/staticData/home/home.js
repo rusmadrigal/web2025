@@ -221,7 +221,8 @@ export const userDetailsSidebar = {
   userImage: userImage,
   userImageLight: userImageLight,
   userName: "Rus Madrigal",
-  userIntro: "Hola, mi nombre es Rus Madrigal, trabajo en SEO desde el 2009.",
+  userIntro:
+    "Hola, mi nombre es Rusben Madrigal (también conocido como Rus o Russ). Trabajo en SEO desde el año 2009.",
   designations: ["Technical SEO", "Data enthusiast", "Front-End Developer"],
   basicInfo: [
     {
@@ -465,7 +466,7 @@ export const portfolio = {
       type: "seo",
       title: "Arauze.com - SEO experiment project in the Italian market",
       slug: "arauze-website-experiment",
-      
+
       projectHeading: {
         icon: <GrTasks className="text-theme" />,
         title: "Project Details",
@@ -676,7 +677,7 @@ export const blogs = {
         },
       },
     },
-   
+
     {
       image: {
         thumbnail: blog2Thumbnail?.src,
