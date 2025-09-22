@@ -14,7 +14,7 @@ async function getStaticPaths() {
 
   const allPaths = new Set();
 
-  // ✅ Incluir solo rutas base que tengan un page.jsx y contenido real
+  // ✅ Incluir solo rutas base que tengan un page.jsx y contenido real.
   const conditionalRoutes = [
     {
       path: "",
